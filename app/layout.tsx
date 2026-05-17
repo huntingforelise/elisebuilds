@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "elisebuilds.com | Elise Verhoeye",
@@ -37,6 +38,7 @@ const RootLayout = ({
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full bg-background text-foreground">
         {children}
+      <Analytics/>
       </body>
     </html>
   );
