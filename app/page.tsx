@@ -60,6 +60,7 @@ type HowIWorkSectionProps = {
 const GITHUB_URL = "https://github.com/huntingforelise";
 const LINKEDIN_URL = "https://www.linkedin.com/in/eliseverhoeye/";
 const ORCA_WEBSITE_URL = "https://getorca.com/";
+const CASA_WEBSITE_URL = "https://casa-film.com";
 const ORCA_DOWNLOAD_URL =
   "https://help.getorca.com/en/articles/8260060-how-do-i-download-the-orca-app";
 
@@ -441,9 +442,15 @@ const PreviousWorkSectionCompact = ({
                 standardising how enquiries are captured, and making the quoting
                 process faster, clearer, and more consistent.
               </p>
-              <p className="mt-5 text-sm font-semibold text-accent">
-                Link will be shared shortly.
-              </p>
+              <a
+                href={CASA_WEBSITE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-accent transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                View the Casa Film & Music website
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
 
             <div className="min-w-[260px] flex-1 rounded-3xl border border-border/50 bg-surface-strong p-6">
