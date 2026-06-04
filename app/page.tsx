@@ -63,6 +63,9 @@ const ORCA_WEBSITE_URL = "https://getorca.com/";
 const CASA_WEBSITE_URL = "https://casa-film.com";
 const ORCA_DOWNLOAD_URL =
   "https://help.getorca.com/en/articles/8260060-how-do-i-download-the-orca-app";
+const CASA_WEBSITE_SCREENSHOT_SRC = "/casa-film-website-screenshot.png";
+const ORCA_APP_SCREENSHOT_SRC = "/orca-app-screenshot-v2.png";
+const CURRENT_WORK_APP_PLACEHOLDER_SRC = "/app-placeholder.svg";
 
 const BEST_FIT: BestFitItem[] = [
   "Service-based businesses",
@@ -113,9 +116,17 @@ const PROJECT_FOCUS: string[] = [
 ];
 
 const ORCA_HIGHLIGHTS: string[] = [
-  "Built and maintained Orca's mobile app",
-  "Created product pages and the route-weather feature for boaters",
-  "Worked on smaller website improvements to support the broader product",
+  "Built mobile features for a navigation app used in real boating conditions",
+  "Turned route, map, and weather data into clearer in-app decisions",
+  "Supported the product beyond the app with targeted website improvements",
+];
+
+const CASA_FOCUS_AREAS: string[] = [
+  "Turn website visitors into structured enquiries",
+  "Reduce back-and-forth before a client books",
+  "Make services, packages, and add-ons easier to buy",
+  "Save admin time with clearer lead capture and email flow",
+  "Create a scalable base for future revenue-driving features",
 ];
 
 const ORCA_TESTIMONIAL: ClientTestimonial = {
@@ -367,7 +378,7 @@ const CurrentWorkSection = ({
           className="mt-10 rounded-[2rem] border border-border/50 bg-surface-strong p-8 shadow-[0_20px_50px_rgba(53,63,68,0.08)]"
           delay={0.08}
         >
-          <div className="flex flex-wrap items-start justify-between gap-6">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_420px] xl:items-center">
             <div className="max-w-2xl">
               <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
                 In progress
@@ -386,18 +397,40 @@ const CurrentWorkSection = ({
               </p>
             </div>
 
-            <div className="min-w-[260px] flex-1 rounded-3xl border border-border/50 bg-surface p-6">
-              <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
-                Project focus
-              </p>
-              <ul className="mt-5 space-y-3 text-sm text-foreground">
-                {projectFocus.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent ring-1 ring-border" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="rounded-[1.75rem] border border-border/50 bg-surface p-5 shadow-[0_14px_32px_rgba(53,63,68,0.08)]">
+              <div className="grid gap-5 sm:grid-cols-[150px_minmax(0,1fr)] sm:items-center lg:grid-cols-1 xl:grid-cols-[160px_minmax(0,1fr)]">
+                <div className="mx-auto w-full max-w-[150px] xl:max-w-[160px]">
+                  <div className="rounded-[1.85rem] bg-foreground p-2 shadow-[0_18px_38px_rgba(40,50,59,0.18)] ring-1 ring-foreground/10">
+                    <div className="mx-auto mb-1.5 h-1.5 w-11 rounded-full bg-surface/25" />
+                    <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.3rem] bg-surface">
+                      <Image
+                        src={CURRENT_WORK_APP_PLACEHOLDER_SRC}
+                        alt="Real estate mobile app placeholder"
+                        fill
+                        sizes="(min-width: 1280px) 160px, 150px"
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
+                    Project focus
+                  </p>
+                  <ul className="mt-4 space-y-3">
+                    {projectFocus.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-sm leading-6 text-foreground"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent ring-2 ring-accent-soft" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </ScrollReveal>
@@ -424,7 +457,7 @@ const PreviousWorkSectionCompact = ({
           className="mt-10 rounded-[2rem] border border-border/50 bg-surface p-8 shadow-[0_20px_50px_rgba(53,63,68,0.08)]"
           delay={0.08}
         >
-          <div className="flex flex-wrap items-start justify-between gap-6">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] xl:items-center">
             <div className="max-w-2xl">
               <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
                 Casa Film &amp; Music
@@ -446,40 +479,46 @@ const PreviousWorkSectionCompact = ({
                 href={CASA_WEBSITE_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-accent transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="mt-5 inline-flex w-fit items-center justify-center gap-2 rounded-full border border-accent/35 px-4 py-3 text-sm font-semibold leading-5 text-accent transition hover:border-foreground/35 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 View the Casa Film & Music website
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true" className="shrink-0">
+                  →
+                </span>
               </a>
             </div>
 
-            <div className="min-w-[260px] flex-1 rounded-3xl border border-border/50 bg-surface-strong p-6">
-              <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
-                Focus areas
-              </p>
-              <ul className="mt-5 space-y-3 text-sm text-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent ring-1 ring-border" />
-                  <span>Structured booking and quote flow</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent ring-1 ring-border" />
-                  <span>Clear service selection and add-ons</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent ring-1 ring-border" />
-                  <span>Lead capture and email handling</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent ring-1 ring-border" />
-                  <span>Optimizing performance of media items</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent ring-1 ring-border" />
-                  <span>Foundation for future integrations</span>
-                </li>
-              </ul>
+            <div className="mx-auto w-full max-w-md xl:mr-0">
+              <div className="rounded-[1.45rem] bg-foreground p-2 shadow-[0_24px_55px_rgba(40,50,59,0.16)] ring-1 ring-foreground/10">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[0.95rem] bg-surface">
+                  <Image
+                    src={CASA_WEBSITE_SCREENSHOT_SRC}
+                    alt="Casa Film & Music website screenshot"
+                    fill
+                    sizes="(min-width: 1280px) 400px, (min-width: 640px) 448px, calc(100vw - 80px)"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <div className="mx-auto h-4 w-[34%] rounded-b-2xl bg-foreground/85 shadow-[0_14px_20px_rgba(40,50,59,0.12)]" />
             </div>
+          </div>
+
+          <div className="mt-5 pt-3">
+            <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
+              Focus areas
+            </p>
+            <ul className="mt-4 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+              {CASA_FOCUS_AREAS.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 border-t border-border/45 pt-4 text-sm leading-6 text-foreground"
+                >
+                  <span className="mt-2 h-1.5 w-6 shrink-0 rounded-full bg-accent/80" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <figure className="mt-8 rounded-[1.5rem] border border-border/50 bg-surface-warm p-6 shadow-[0_12px_28px_rgba(53,63,68,0.06)] lg:p-7">
@@ -505,7 +544,7 @@ const PreviousWorkSectionCompact = ({
           className="mt-8 rounded-[2rem] border border-border/50 bg-surface p-8 shadow-[0_20px_50px_rgba(53,63,68,0.08)]"
           delay={0.12}
         >
-          <div className="flex flex-wrap items-start justify-between gap-6">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_420px] xl:items-center">
             <div className="max-w-2xl">
               <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
                 Orca
@@ -524,12 +563,12 @@ const PreviousWorkSectionCompact = ({
                 boaters, and a smaller amount of website work to support the
                 wider product experience.
               </p>
-              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
+              <div className="mt-5 grid max-w-sm gap-3">
                 <a
                   href={ORCA_WEBSITE_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="inline-flex min-w-0 items-center justify-center gap-2 rounded-full border border-accent/35 px-4 py-3 text-center text-sm font-semibold leading-5 text-accent transition hover:border-foreground/35 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   View the Orca website
                   <span aria-hidden="true">→</span>
@@ -538,7 +577,7 @@ const PreviousWorkSectionCompact = ({
                   href={ORCA_DOWNLOAD_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="inline-flex min-w-0 items-center justify-center gap-2 rounded-full border border-border/70 px-4 py-3 text-center text-sm font-semibold leading-5 text-foreground transition hover:border-accent/45 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   Download the Orca app
                   <span aria-hidden="true">→</span>
@@ -546,18 +585,40 @@ const PreviousWorkSectionCompact = ({
               </div>
             </div>
 
-            <div className="min-w-[260px] flex-1 rounded-3xl border border-border/50 bg-surface-strong p-6">
-              <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
-                Highlights
-              </p>
-              <ul className="mt-5 space-y-3 text-sm text-foreground">
-                {highlights.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent ring-1 ring-border" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="rounded-[1.75rem] border border-border/50 bg-surface-blue/70 p-5 shadow-[0_14px_32px_rgba(53,63,68,0.08)]">
+              <div className="grid gap-5 sm:grid-cols-[150px_minmax(0,1fr)] sm:items-center lg:grid-cols-1 xl:grid-cols-[160px_minmax(0,1fr)]">
+                <div className="mx-auto w-full max-w-[150px] xl:max-w-[160px]">
+                  <div className="rounded-[1.85rem] bg-foreground p-2 shadow-[0_18px_38px_rgba(40,50,59,0.18)] ring-1 ring-foreground/10">
+                    <div className="mx-auto mb-1.5 h-1.5 w-11 rounded-full bg-surface/25" />
+                    <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.3rem] bg-surface">
+                      <Image
+                        src={ORCA_APP_SCREENSHOT_SRC}
+                        alt="Orca mobile app screenshot"
+                        fill
+                        sizes="(min-width: 1280px) 160px, 150px"
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
+                    Highlights
+                  </p>
+                  <ul className="mt-4 space-y-3">
+                    {highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-sm leading-6 text-foreground"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent ring-2 ring-accent-soft" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
