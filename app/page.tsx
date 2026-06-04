@@ -504,7 +504,7 @@ const PreviousWorkSectionCompact = ({
             </div>
           </div>
 
-          <div className="mt-5 pt-3">
+          <div className="mt-6 rounded-[1.5rem] border border-border/45 bg-surface-warm/45 p-6">
             <p className="text-sm uppercase tracking-[0.24em] text-accent font-bold">
               Focus areas
             </p>
@@ -512,7 +512,7 @@ const PreviousWorkSectionCompact = ({
               {CASA_FOCUS_AREAS.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 border-t border-border/45 pt-4 text-sm leading-6 text-foreground"
+                  className="flex items-start gap-3 border-t border-border/35 pt-4 text-sm leading-6 text-foreground"
                 >
                   <span className="mt-2 h-1.5 w-6 shrink-0 rounded-full bg-accent/80" />
                   <span>{item}</span>
