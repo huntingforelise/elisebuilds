@@ -59,7 +59,7 @@ type HowIWorkSectionProps = {
 
 const GITHUB_URL = "https://github.com/huntingforelise";
 const LINKEDIN_URL = "https://www.linkedin.com/in/eliseverhoeye/";
-const SITE_URL = "https://elisebuilds.com";
+const SITE_URL = "https://www.elisebuilds.com";
 const ORCA_WEBSITE_URL = "https://getorca.com/";
 const CASA_WEBSITE_URL = "https://casa-film.com";
 const ORCA_DOWNLOAD_URL =

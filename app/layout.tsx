@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
-const SITE_URL = "https://elisebuilds.com";
+const SITE_URL = "https://www.elisebuilds.com";
 const SITE_NAME = "elisebuilds";
 const SITE_DESCRIPTION =
   "Freelance software engineer building Next.js websites, React Native apps, booking systems, and workflow automation for service businesses and startups.";
