@@ -59,6 +59,7 @@ type HowIWorkSectionProps = {
 
 const GITHUB_URL = "https://github.com/huntingforelise";
 const LINKEDIN_URL = "https://www.linkedin.com/in/eliseverhoeye/";
+const SITE_URL = "https://elisebuilds.com";
 const ORCA_WEBSITE_URL = "https://getorca.com/";
 const CASA_WEBSITE_URL = "https://casa-film.com";
 const ORCA_DOWNLOAD_URL =
@@ -150,6 +151,69 @@ const STEPS: Step[] = [
   "Deliver something clearer, faster, and easier to manage.",
 ];
 
+const STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "elisebuilds",
+      url: SITE_URL,
+      description:
+        "Freelance software engineering services for websites, mobile apps, booking systems, internal tools, and workflow automation.",
+      inLanguage: "en",
+      publisher: {
+        "@id": `${SITE_URL}/#person`,
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Elise Verhoeye",
+      url: SITE_URL,
+      image: `${SITE_URL}/elise.jpeg`,
+      jobTitle: "Freelance Software Engineer",
+      email: "mailto:elise@elisebuilds.com",
+      sameAs: [LINKEDIN_URL, GITHUB_URL],
+      knowsAbout: [
+        "Next.js",
+        "React",
+        "React Native",
+        "TypeScript",
+        "Supabase",
+        "Sanity CMS",
+        "Workflow automation",
+        "Booking systems",
+        "Mobile app development",
+      ],
+      worksFor: {
+        "@id": `${SITE_URL}/#business`,
+      },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#business`,
+      name: "elisebuilds",
+      url: SITE_URL,
+      image: `${SITE_URL}/elisebuilds.svg`,
+      email: "mailto:elise@elisebuilds.com",
+      founder: {
+        "@id": `${SITE_URL}/#person`,
+      },
+      areaServed: ["Mallorca", "Europe", "International"],
+      priceRange: "$$",
+      serviceType: [
+        "Website development",
+        "Mobile app development",
+        "Workflow automation",
+        "Booking systems",
+        "Internal tools",
+      ],
+      slogan: "Websites, apps, and smarter workflows.",
+    },
+  ],
+};
+
 const SectionHeading = ({
   eyebrow,
   title,
@@ -176,14 +240,14 @@ const Hero = ({ bestFit }: HeroProps): JSX.Element => {
         </p>
 
         <h1 className="text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl">
-          I build systems that make businesses run smoother.
+          I build websites, apps, and systems that make businesses run smoother.
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/92">
-          From websites and mobile apps to booking flows and internal tools, I
-          design and build solutions that reduce manual work, give people time
-          back, improve client experience, and bring structure to how your
-          business operates.
+          As a freelance software engineer, I design and build solutions from
+          websites and mobile apps to booking flows and internal tools that
+          reduce manual work, give people time back, improve client experience,
+          and bring structure to how your business operates.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-4">
@@ -789,6 +853,12 @@ const Footer = (): JSX.Element => {
 const FreelancePositioningSite = (_props: Props): JSX.Element => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(STRUCTURED_DATA),
+        }}
+      />
       <header className="sticky top-0 z-50 border-b border-border/50 bg-surface shadow-[0_1px_0_rgba(40,50,59,0.05),0_12px_30px_rgba(40,50,59,0.04)] backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 sm:gap-4">
