@@ -2,11 +2,12 @@ import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const SITE_URL = "https://www.elisebuilds.com";
 const SITE_NAME = "elisebuilds";
 const SITE_DESCRIPTION =
-  "Freelance software engineer building Next.js websites, React Native apps, booking systems, and workflow automation for service businesses and startups.";
+  "Freelance software engineer building and improving websites, apps, booking systems, and workflow automation for practical digital systems.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,8 +27,13 @@ export const metadata: Metadata = {
     "React Native developer",
     "TypeScript developer",
     "mobile app developer",
+    "desktop app developer",
     "booking system developer",
+    "product improvement",
     "Supabase",
+    "Firebase",
+    "Clerk",
+    "Vercel",
     "Sanity CMS",
     "Resend",
     "Codex",
@@ -90,6 +96,7 @@ const RootLayout = ({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full bg-background text-foreground">
+        <ScrollToTop />
         {children}
         <Analytics />
       </body>

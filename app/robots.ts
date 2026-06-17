@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://www.elisebuilds.com";
+import { SITE_URL } from "./seo-content";
 
 const robots = (): MetadataRoute.Robots => {
   return {

@@ -36,6 +36,30 @@ body {
   font-family: var(--font-ui-sans);
 }
 
+.count-up-pop {
+  animation: count-up-pop 440ms cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+@keyframes count-up-pop {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  42% {
+    transform: translateY(-0.2rem) scale(1.42);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .count-up-pop {
+    animation: none;
+  }
+}
+
 .cta-primary {
   border-radius: 9999px;
   background: var(--accent);
