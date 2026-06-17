@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
+import { AnalyticsOptOut } from "./components/AnalyticsOptOut";
 import { ScrollToTop } from "./components/ScrollToTop";
 
 const SITE_URL = "https://www.elisebuilds.com";
@@ -98,7 +98,7 @@ const RootLayout = ({
       <body className="min-h-full bg-background text-foreground">
         <ScrollToTop />
         {children}
-        <Analytics />
+        <AnalyticsOptOut />
       </body>
     </html>
   );
