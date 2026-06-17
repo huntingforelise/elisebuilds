@@ -166,8 +166,8 @@ const AboutPage = (): JSX.Element => {
             y={22}
           >
             <div className="relative">
-              <div className="absolute -left-4 top-8 h-full w-full rotate-[-3deg] bg-surface-strong" />
-              <div className="relative rotate-[1.5deg] border border-border/50 bg-surface p-4 shadow-[0_22px_55px_rgba(53,63,68,0.1)]">
+              <div className="absolute -left-4 top-8 hidden h-full w-full bg-surface-strong lg:block lg:rotate-[-3deg]" />
+              <div className="relative border border-border/50 bg-surface p-4 shadow-[0_22px_55px_rgba(53,63,68,0.1)] lg:rotate-[1.5deg]">
                 <div className="relative aspect-[4/5] overflow-hidden bg-surface-blue">
                   <Image
                     src="/elise.png"
@@ -179,13 +179,13 @@ const AboutPage = (): JSX.Element => {
                     unoptimized
                   />
                 </div>
-                <div className="grid gap-3 border-t border-border/50 bg-surface px-2 py-4 sm:grid-cols-3">
+                <div className="flex items-start justify-between gap-2 border-t border-border/50 bg-surface px-1.5 py-4 text-center sm:gap-3 sm:px-2">
                   {SNAPSHOTS.map((item) => (
-                    <div key={item.label}>
-                      <p className="font-mono text-lg font-bold text-accent">
+                    <div key={item.label} className="min-w-0 flex-1">
+                      <p className="font-mono text-base font-bold text-accent sm:text-lg">
                         {item.value}
                       </p>
-                      <p className="mt-1 text-sm font-semibold leading-5 text-foreground/72">
+                      <p className="mt-1 whitespace-nowrap text-[0.72rem] font-semibold leading-5 text-foreground/72 sm:text-sm">
                         {item.label}
                       </p>
                     </div>

@@ -216,8 +216,8 @@ const Hero = (): JSX.Element => {
 
         <ScrollReveal className="relative z-10 lg:mt-8" delay={0.12} y={22}>
           <div className="relative">
-            <div className="absolute -left-4 top-8 h-full w-full rotate-[-3deg] bg-surface-strong" />
-            <div className="relative rotate-[1.5deg] border border-border/60 bg-surface p-8 shadow-[0_22px_55px_rgba(53,63,68,0.1)]">
+            <div className="absolute -left-4 top-8 hidden h-full w-full bg-surface-strong lg:block lg:rotate-[-3deg]" />
+            <div className="relative border border-border/60 bg-surface p-8 shadow-[0_22px_55px_rgba(53,63,68,0.1)] lg:rotate-[1.5deg]">
               <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
                 What I can help with
               </p>
@@ -305,7 +305,7 @@ const AboutPreview = (): JSX.Element => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.08} y={18}>
-          <div className="relative mr-auto w-full max-w-[220px] rotate-[2deg] border border-border/50 bg-surface p-3 shadow-[0_18px_40px_rgba(53,63,68,0.1)] lg:mx-auto">
+          <div className="relative mr-auto w-full max-w-[220px] border border-border/50 bg-surface p-3 shadow-[0_18px_40px_rgba(53,63,68,0.1)] lg:mx-auto lg:rotate-[2deg]">
             <div className="relative aspect-[4/5] overflow-hidden bg-surface-blue">
               <Image
                 src="/elise.png"
