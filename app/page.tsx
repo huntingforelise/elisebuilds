@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import { HammerIcon, LaptopIcon, MapPinIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { CountUpNumber } from "./components/CountUpNumber";
@@ -20,61 +21,6 @@ const GITHUB_URL = "https://github.com/huntingforelise";
 const LINKEDIN_URL = "https://www.linkedin.com/in/eliseverhoeye/";
 const SITE_URL = "https://www.elisebuilds.com";
 const YEARS_BUILDING = 4;
-
-const PinIcon = (): JSX.Element => {
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-5 w-5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-    >
-      <path d="M12 21s7-5.3 7-12a7 7 0 0 0-14 0c0 6.7 7 12 7 12Z" />
-      <circle cx="12" cy="9" r="2.5" />
-    </svg>
-  );
-};
-
-const LaptopIcon = (): JSX.Element => {
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-5 w-5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-    >
-      <rect x="5" y="4" width="14" height="11" rx="2" />
-      <path d="M3 19h18" />
-      <path d="M8 15h8" />
-    </svg>
-  );
-};
-
-const BuildIcon = (): JSX.Element => {
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-5 w-5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-    >
-      <path d="m14.7 6.3 3 3" />
-      <path d="M4 20l5.5-1.5L19 9a2.1 2.1 0 0 0-3-3l-9.5 9.5L5 20Z" />
-    </svg>
-  );
-};
 
 const SERVICES = [
   {
@@ -132,12 +78,16 @@ const ABOUT_FACTS = [
   {
     label: "Based in",
     value: "Spain",
-    icon: <PinIcon />,
+    icon: (
+      <MapPinIcon aria-hidden="true" className="h-5 w-5" weight="duotone" />
+    ),
   },
   {
     label: "Work style",
     value: "Remote-first",
-    icon: <LaptopIcon />,
+    icon: (
+      <LaptopIcon aria-hidden="true" className="h-5 w-5" weight="duotone" />
+    ),
   },
   {
     label: "Years building",
@@ -147,7 +97,9 @@ const ABOUT_FACTS = [
         <span aria-hidden="true">+</span>
       </>
     ),
-    icon: <BuildIcon />,
+    icon: (
+      <HammerIcon aria-hidden="true" className="h-5 w-5" weight="duotone" />
+    ),
   },
 ];
 

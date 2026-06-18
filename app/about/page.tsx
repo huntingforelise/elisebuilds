@@ -1,5 +1,19 @@
 import type { JSX } from "react";
 import type { Metadata } from "next";
+import type { Icon } from "@phosphor-icons/react/lib";
+import {
+  ChatsCircleIcon,
+  CheckCircleIcon,
+  CodeIcon,
+  EggCrackIcon,
+  FlagIcon,
+  GlobeHemisphereWestIcon,
+  MagnifyingGlassIcon,
+  MapPinIcon,
+  NotebookIcon,
+  SparkleIcon,
+  TranslateIcon,
+} from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { GoogleAppointmentButton } from "../components/GoogleAppointmentButton";
@@ -31,17 +45,23 @@ export const metadata: Metadata = {
 const SNAPSHOTS = [
   {
     value: "3",
-    label: "Languages",
+    label: "languages spoken professionally",
+    detail: "Dutch, English, and French",
+    icon: "language",
   },
   {
     value: "4",
-    label: "Years",
+    label: "years building",
+    detail: "Websites, apps, and product flows",
+    icon: "code",
   },
   {
     value: "4",
-    label: "Countries",
+    label: "client nationalities",
+    detail: "Working across borders and contexts",
+    icon: "globe",
   },
-];
+] as const;
 
 const WORK_MODES = [
   "A new website or web app from scratch",
@@ -51,12 +71,51 @@ const WORK_MODES = [
   "AI-generated code that needs a human pass before launch",
 ];
 
-const BACKGROUND_NOTES = [
-  "Mum, builder, and list-maker",
-  "Belgian-Australian, based in Spain",
-  "Fluent in Dutch, English, and French",
-  "Learning Spanish, slowly but steadily",
-];
+const WORK_VALUES = [
+  {
+    title: "Calm",
+    detail: "Steady communication, even when the project has moving parts.",
+    icon: "spark",
+  },
+  {
+    title: "Thoughtful",
+    detail: "I think before I build, so the work starts in the right place.",
+    icon: "search",
+  },
+  {
+    title: "Thorough",
+    detail: "I care about the small details that make things easier later.",
+    icon: "check",
+  },
+  {
+    title: "Quick to learn",
+    detail: "New tools, teams, and constraints do not throw me for long.",
+    icon: "note",
+  },
+  {
+    title: "Polite",
+    detail: "Clear, respectful collaboration matters as much as the code.",
+    icon: "message",
+  },
+] as const;
+
+const PROFILE_DETAILS = [
+  {
+    title: "Belgium born",
+    detail: "Raised with Dutch, French, and English around me.",
+    icon: "egg",
+  },
+  {
+    title: "Australian citizen",
+    detail: "Part of the Belgian-Australian mix I bring to the work.",
+    icon: "flag",
+  },
+  {
+    title: "Based in Spain",
+    detail: "Working internationally from here.",
+    icon: "pin",
+  },
+] as const;
 
 const GITHUB_URL = "https://github.com/huntingforelise";
 const LINKEDIN_URL = "https://www.linkedin.com/in/eliseverhoeye/";
@@ -83,6 +142,41 @@ const Eyebrow = ({ children }: { children: string }): JSX.Element => {
     <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
       {children}
     </p>
+  );
+};
+
+type DetailIconName =
+  | "check"
+  | "code"
+  | "egg"
+  | "flag"
+  | "globe"
+  | "language"
+  | "message"
+  | "note"
+  | "pin"
+  | "search"
+  | "spark";
+
+const DETAIL_ICONS: Record<DetailIconName, Icon> = {
+  check: CheckCircleIcon,
+  code: CodeIcon,
+  egg: EggCrackIcon,
+  flag: FlagIcon,
+  globe: GlobeHemisphereWestIcon,
+  language: TranslateIcon,
+  message: ChatsCircleIcon,
+  note: NotebookIcon,
+  pin: MapPinIcon,
+  search: MagnifyingGlassIcon,
+  spark: SparkleIcon,
+};
+
+const DetailIcon = ({ name }: { name: DetailIconName }): JSX.Element => {
+  const IconComponent = DETAIL_ICONS[name];
+
+  return (
+    <IconComponent aria-hidden="true" className="h-5 w-5" weight="duotone" />
   );
 };
 
@@ -141,17 +235,20 @@ const AboutPage = (): JSX.Element => {
             <h1 className="mt-4 text-4xl font-semibold leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
               I&apos;m Elise, lovely to meet you.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-foreground/92">
-              elisebuilds is my small software studio. I work with people who
-              need a new site, an app feature, a better product flow, or a
-              technical person to help bring an idea down to earth.
-            </p>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-foreground/80">
-              I do the building myself. Sometimes that means starting from a
-              blank page. Sometimes it means joining halfway through and making
-              sense of what is already there. Either way, I like making things
-              that are clear, usable, and not a pain to keep working on.
-            </p>
+            <div className="mt-6 max-w-2xl space-y-5 text-base leading-8 text-foreground/84">
+              <p>
+                elisebuilds is my small software studio. I work with people who
+                need a new site, an app feature, a better product flow, or a
+                technical person to help bring an idea down to earth.
+              </p>
+              <p>
+                I do the building myself. Sometimes that means starting from a
+                blank page. Sometimes it means joining halfway through and
+                making sense of what is already there. Either way, I like making
+                things that are clear, usable, and not a pain to keep working
+                on.
+              </p>
+            </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <GoogleAppointmentButton />
               <Link href="/portfolio" className="cta-secondary">
@@ -179,19 +276,110 @@ const AboutPage = (): JSX.Element => {
                     unoptimized
                   />
                 </div>
-                <div className="flex items-start justify-between gap-2 border-t border-border/50 bg-surface px-1.5 py-4 text-center sm:gap-3 sm:px-2">
-                  {SNAPSHOTS.map((item) => (
-                    <div key={item.label} className="min-w-0 flex-1">
-                      <p className="font-mono text-base font-bold text-accent sm:text-lg">
-                        {item.value}
-                      </p>
-                      <p className="mt-1 whitespace-nowrap text-[0.72rem] font-semibold leading-5 text-foreground/72 sm:text-sm">
-                        {item.label}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="bg-surface-strong">
+        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+          <ScrollReveal>
+            <div className="max-w-3xl">
+              <Eyebrow>A few details</Eyebrow>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+                A small mix of places, languages, and practical experience.
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1} y={18}>
+            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {SNAPSHOTS.map((item) => (
+                <div
+                  key={item.label}
+                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(53,63,68,0.06)]"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-accent-soft text-accent">
+                      <DetailIcon name={item.icon} />
+                    </span>
+                    <div>
+                      <h3 className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-bold leading-5 text-foreground">
+                        <span className="font-mono text-2xl leading-none text-accent">
+                          {item.value}
+                        </span>
+                        <span>{item.label}</span>
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-foreground/72">
+                        {item.detail}
                       </p>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
+              ))}
+
+              {PROFILE_DETAILS.map((item) => (
+                <div
+                  key={item.title}
+                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(53,63,68,0.06)]"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-surface-warm text-accent">
+                      <DetailIcon name={item.icon} />
+                    </span>
+                    <div>
+                      <h3 className="text-sm font-bold leading-5 text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-foreground/72">
+                        {item.detail}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="bg-surface-blue">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+          <ScrollReveal>
+            <Eyebrow>Working style</Eyebrow>
+            <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+              Calm, careful, and kind.
+            </h2>
+            <p className="mt-6 text-base leading-8 text-foreground/84">
+              I care about making the work feel steady. That means thinking
+              before doing, asking useful questions, and keeping the process
+              clear enough that you always know where things stand.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1} y={18}>
+            <div className="grid gap-3">
+              {WORK_VALUES.map((item) => (
+                <div
+                  key={item.title}
+                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(53,63,68,0.06)]"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-accent-soft text-accent">
+                      <DetailIcon name={item.icon} />
+                    </span>
+                    <div>
+                      <h3 className="text-sm font-bold leading-5 text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-foreground/72">
+                        {item.detail}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </ScrollReveal>
         </div>
@@ -224,40 +412,6 @@ const AboutPage = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="bg-surface-blue">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-          <ScrollReveal>
-            <Eyebrow>Working style</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
-              Clear, thoughtful, and stress-free.
-            </h2>
-            <p className="mt-6 text-base leading-8 text-foreground/84">
-              I care about whether people can understand what you offer, use
-              what you have built, and know what to do next. The design matters
-              too, but it should support the work instead of getting in the way.
-            </p>
-            <p className="mt-5 text-base leading-8 text-foreground/84">
-              I am also a mum, Belgian-Australian, and based in Spain. That mix
-              has made me realistic about time, communication, and building
-              things outside of a perfect project plan.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1} y={18}>
-            <div className="grid gap-3">
-              {BACKGROUND_NOTES.map((note) => (
-                <div
-                  key={note}
-                  className="border-l-4 border-accent bg-surface px-5 py-4 text-sm font-semibold leading-7 text-foreground shadow-[0_14px_30px_rgba(53,63,68,0.06)]"
-                >
-                  {note}
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       <WorkLinksSection />
 
       <section className="bg-background">
@@ -270,8 +424,8 @@ const AboutPage = (): JSX.Element => {
                   Got something you want to make easier?
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-8 text-foreground/82">
-                  Send me the site, app, workflow, or idea you are looking at.
-                  I can help you work out what is worth improving, building, or
+                  Send me the site, app, workflow, or idea you are looking at. I
+                  can help you work out what is worth improving, building, or
                   leaving alone for now.
                 </p>
               </div>
