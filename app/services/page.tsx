@@ -51,6 +51,25 @@ const HOW_IT_WORKS = [
   "You get something you can use, hand over, improve, or keep building on.",
 ];
 
+const TECH_GROUPS = [
+  {
+    title: "Web & apps",
+    items: ["Next.js", "React", "React Native", "TypeScript", "iOS", "Android"],
+  },
+  {
+    title: "Backend & data",
+    items: ["Supabase", "Firebase", "Sanity", "Contentful"],
+  },
+  {
+    title: "Auth & delivery",
+    items: ["Clerk", "Vercel", "Resend", "Expo"],
+  },
+  {
+    title: "Automation & AI",
+    items: ["Make", "Codex", "Claude"],
+  },
+];
+
 const ServicesPage = () => {
   const structuredData = {
     "@context": "https://schema.org",
@@ -184,6 +203,51 @@ const ServicesPage = () => {
                   <p className="text-sm font-semibold leading-7 text-foreground/88">
                     {step}
                   </p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="border-y border-border/50 bg-surface">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[0.58fr_1.42fr] lg:items-start lg:px-8 lg:py-16">
+          <ScrollReveal>
+            <div className="max-w-sm">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+                Tools I work with
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
+                What I usually build with.
+              </h2>
+            </div>
+            <p className="mt-4 max-w-md text-sm leading-7 text-foreground/85">
+              The stack changes by project. These are the tools I reach for when
+              they fit the job, the team, and the thing that needs to keep
+              working after launch.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.08} y={18}>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {TECH_GROUPS.map((group) => (
+                <div
+                  key={group.title}
+                  className="border-l-4 border-accent bg-surface p-4 shadow-[0_10px_24px_rgba(53,63,68,0.05)]"
+                >
+                  <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-accent">
+                    {group.title}
+                  </h3>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <li
+                        key={`${group.title}-${item}`}
+                        className="border border-border/60 bg-surface-blue px-3 py-1 text-sm font-semibold text-foreground"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>

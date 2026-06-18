@@ -63,29 +63,6 @@ const WORK_PREVIEWS = [
   },
 ];
 
-const TECH_GROUPS = [
-  {
-    title: "Web & apps",
-    text: "Fast, maintainable interfaces for service websites, dashboards, internal tools, and product flows.",
-    items: ["Next.js", "React", "React Native", "TypeScript", "iOS", "Android"],
-  },
-  {
-    title: "Backend & data",
-    text: "Practical backends and editable content systems that teams can keep using.",
-    items: ["Supabase", "Firebase", "Sanity", "Contentful"],
-  },
-  {
-    title: "Auth & delivery",
-    text: "Authentication, email, deployment, and product delivery support.",
-    items: ["Clerk", "Vercel", "Resend", "Expo"],
-  },
-  {
-    title: "Automation & AI",
-    text: "Email flows, workflow automation, AI-assisted development, and practical project cleanup where it helps.",
-    items: ["Make", "Codex", "Claude"],
-  },
-];
-
 const HERO_HELP_ITEMS = [
   "A clearer website or web app",
   "A mobile app feature or improvement",
@@ -191,7 +168,7 @@ const Hero = (): JSX.Element => {
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-20">
         <ScrollReveal className="relative z-10 max-w-3xl" y={18}>
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.26em] text-accent">
-            Websites, apps & smarter workflows
+            Websites, apps & automations
           </p>
 
           <h1 className="text-4xl font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
@@ -199,9 +176,9 @@ const Hero = (): JSX.Element => {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/92">
-            Focused digital work for websites, mobile apps, desktop tools,
-            booking flows, internal systems, automations, and existing projects
-            that need a thoughtful technical eye.
+            That might mean a new website, a better booking flow, a mobile app,
+            an internal tool, or thoughtful help with a project that already
+            exists.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -292,12 +269,11 @@ const AboutPreview = (): JSX.Element => {
             className="max-w-3xl"
           />
           <p className="mt-5 max-w-3xl text-base leading-8 text-foreground/88">
-            I’m Elise, a freelance software engineer focused on building useful
-            systems across web, mobile, and automation. I like solving real
-            problems and seeing ideas come to life, especially when the end
-            result makes someone’s day easier. I care about simple, enjoyable
-            user journeys and making the digital part feel clearer, calmer, and
-            easier to manage.
+            I’m Elise, the freelance software engineer behind elisebuilds. I
+            build useful systems across web, mobile, and automation, with a
+            focus on real problems, thoughtful user journeys, and digital tools
+            that make work easier to manage. I like seeing ideas come to life,
+            especially when the end result makes someone’s day easier.
           </p>
           <Link href="/about" className="cta-secondary mt-8 inline-flex">
             Read more about me
@@ -375,53 +351,6 @@ const WorkPreview = (): JSX.Element => {
   );
 };
 
-const TechSnapshot = (): JSX.Element => {
-  return (
-    <section className="border-t border-border/50 bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[0.58fr_1.42fr] lg:items-start lg:px-8 lg:py-16">
-        <ScrollReveal>
-          <div className="max-w-sm">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
-              Tech stack
-            </p>
-            <h2 className="mt-3 text-2xl font-semibold text-foreground sm:text-3xl">
-              Tools I use often.
-            </h2>
-          </div>
-          <p className="mt-4 max-w-md text-sm leading-7 text-foreground/85">
-            The stack changes by project. These are the tools I reach for most.
-          </p>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.08} y={18}>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {TECH_GROUPS.map((group) => (
-              <div
-                key={group.title}
-                className="border-l-4 border-accent bg-surface p-4 shadow-[0_10px_24px_rgba(53,63,68,0.05)]"
-              >
-                <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-accent">
-                  {group.title}
-                </h3>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <li
-                      key={`${group.title}-${item}`}
-                      className="border border-border/60 bg-surface-blue px-3 py-1 text-sm font-semibold text-foreground"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-      </div>
-    </section>
-  );
-};
-
 const ContactSection = (): JSX.Element => {
   return (
     <section className="border-t border-border/50 bg-background" id="contact">
@@ -468,10 +397,9 @@ const FreelancePositioningSite = (_props: Props): JSX.Element => {
 
       <main>
         <Hero />
-        <ServicesPreview />
         <AboutPreview />
+        <ServicesPreview />
         <WorkPreview />
-        <TechSnapshot />
         <ContactSection />
       </main>
       <SiteFooter />
