@@ -178,7 +178,8 @@ const Hero = (): JSX.Element => {
           <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/92">
             That might mean a new website, a better booking flow, a mobile app,
             an internal tool, or thoughtful help with a project that already
-            exists.
+            exists. I’m especially useful for founders and small teams who need
+            a practical builder with startup experience.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
