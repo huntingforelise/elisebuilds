@@ -234,7 +234,7 @@ const SectionHeading = ({
 
 const Hero = (): JSX.Element => {
   return (
-    <section className="relative overflow-hidden border-b border-border/50">
+    <section className="relative overflow-hidden border-b border-border/50 bg-background">
       <div className="absolute left-0 top-8 hidden h-8 w-2/5 -rotate-2 bg-accent/18 md:block" />
       <div className="absolute bottom-8 right-0 hidden h-10 w-1/3 rotate-2 bg-surface-blue md:block" />
 
@@ -307,7 +307,7 @@ const ServicesPreview = (): JSX.Element => {
           {SERVICES.map((item, index) => (
             <ScrollReveal
               key={item.title}
-              className="border border-border/50 bg-background p-5 shadow-[0_16px_35px_rgba(53,63,68,0.06)] transition hover:-translate-y-1 hover:border-accent/45 sm:p-6"
+              className="border border-border/50 bg-surface p-5 shadow-[0_16px_35px_rgba(53,63,68,0.06)] transition hover:-translate-y-1 hover:border-accent/45 sm:p-6"
               delay={index * 0.08}
               y={22}
             >
@@ -334,7 +334,7 @@ const ServicesPreview = (): JSX.Element => {
 
 const ProcessPreview = (): JSX.Element => {
   return (
-    <section className="border-t border-border/50 bg-background">
+    <section className="border-t border-border/50 bg-surface-blue">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.72fr_1.28fr] lg:px-8 lg:py-16">
         <ScrollReveal>
           <SectionHeading
@@ -377,7 +377,7 @@ const ProcessPreview = (): JSX.Element => {
 
 const AboutPreview = (): JSX.Element => {
   return (
-    <section className="border-t border-border/50 bg-surface-strong">
+    <section className="border-t border-border/50 bg-surface-warm">
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[1fr_240px] lg:items-center lg:px-8 lg:py-16">
         <ScrollReveal>
           <SectionHeading
@@ -438,7 +438,7 @@ const AboutPreview = (): JSX.Element => {
 
 const WorkPreview = (): JSX.Element => {
   return (
-    <section className="border-t border-border/50 bg-surface-blue">
+    <section className="border-t border-border/50 bg-surface-strong">
       <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
         <ScrollReveal>
           <SectionHeading
@@ -541,7 +541,7 @@ const TestimonialsPreview = (): JSX.Element => {
 
 const ContactSection = (): JSX.Element => {
   return (
-    <section className="border-t border-border/50 bg-surface-warm" id="contact">
+    <section className="border-t border-border/50 bg-surface-blue" id="contact">
       <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <ScrollReveal>
           <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(53,63,68,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
