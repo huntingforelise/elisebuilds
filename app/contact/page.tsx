@@ -83,9 +83,9 @@ const ContactPage = (): JSX.Element => {
               Let&apos;s start building together.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/92">
-              You do not need a polished brief. Send the idea, the current
-              link, the workflow, or the stuck point, and I will help identify
-              what needs to happen next.
+              You do not need a polished brief. Send the idea, the current link,
+              the workflow, or the stuck point, and I will help identify what
+              needs to happen next.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href={EMAIL_HREF} className="cta-primary">
@@ -117,11 +117,11 @@ const ContactPage = (): JSX.Element => {
       </section>
 
       <section className="border-y border-border/50 bg-surface-blue">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-8 lg:px-8">
           <ScrollReveal>
             <Eyebrow>What to include</Eyebrow>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground lg:min-h-[5.5rem]">
-              A few details make the first reply much more useful.
+              A few details that will help me draft a more helpful response.
             </h2>
             <ul className="mt-7 grid gap-4">
               {WHAT_TO_SEND.map((item) => (
@@ -135,10 +135,15 @@ const ContactPage = (): JSX.Element => {
             </ul>
           </ScrollReveal>
 
+          <div
+            aria-hidden="true"
+            className="h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent lg:mx-2 lg:h-auto lg:w-px lg:self-stretch lg:bg-gradient-to-b"
+          />
+
           <ScrollReveal delay={0.1} y={18}>
             <Eyebrow>What happens after</Eyebrow>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground lg:min-h-[5.5rem]">
-              No pressure, no sales maze.
+              No pressure, no sales techniques.
             </h2>
             <ol className="mt-7 grid gap-4">
               {NEXT_STEPS.map((item, index) => (

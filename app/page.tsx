@@ -74,6 +74,21 @@ const HERO_HELP_ITEMS = [
   "A review or rescue for AI-generated code",
 ];
 
+const PROCESS_STEPS = [
+  {
+    title: "Tell me what you need",
+    text: "Send a quick message or book a free 30-minute call. No polished brief needed, just tell me the problem you are trying to solve.",
+  },
+  {
+    title: "We shape the scope together",
+    text: "I map out what needs to be built, flag risks early, and give you a clear quote before anything starts.",
+  },
+  {
+    title: "I build, you stay in the loop",
+    text: "You get regular updates, visible progress, and space to give feedback while the work is moving.",
+  },
+];
+
 const ABOUT_FACTS = [
   {
     label: "Based in",
@@ -317,6 +332,49 @@ const ServicesPreview = (): JSX.Element => {
   );
 };
 
+const ProcessPreview = (): JSX.Element => {
+  return (
+    <section className="border-t border-border/50 bg-background">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.72fr_1.28fr] lg:px-8 lg:py-16">
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="How it works"
+            title="Simple to get started."
+            className="max-w-xl"
+          />
+          <p className="mt-5 max-w-md text-base leading-8 text-foreground/82">
+            You do not need to arrive with a finished spec. A loose idea, a
+            messy workflow, or a link to what already exists is enough to begin.
+          </p>
+          <Link href="/contact" className="cta-secondary mt-8 inline-flex">
+            Start a conversation
+          </Link>
+        </ScrollReveal>
+
+        <div className="grid gap-0 border-y border-border/50">
+          {PROCESS_STEPS.map((step, index) => (
+            <ScrollReveal key={step.title} delay={index * 0.06} y={16}>
+              <div className="grid gap-3 border-b border-border/50 bg-surface px-0 py-6 last:border-b-0 sm:grid-cols-[3rem_1fr] sm:gap-5 sm:px-5">
+                <p className="font-mono text-sm font-bold leading-7 text-accent">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <div>
+                  <h3 className="text-lg font-semibold leading-7 text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-foreground/84">
+                    {step.text}
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const AboutPreview = (): JSX.Element => {
   return (
     <section className="border-t border-border/50 bg-surface-strong">
@@ -529,6 +587,7 @@ const FreelancePositioningSite = (_props: Props): JSX.Element => {
         <Hero />
         <AboutPreview />
         <ServicesPreview />
+        <ProcessPreview />
         <WorkPreview />
         <TestimonialsPreview />
         <ContactSection />

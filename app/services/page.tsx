@@ -46,9 +46,18 @@ const SERVICE_AREAS = [
 ];
 
 const HOW_IT_WORKS = [
-  "We talk through what you want to build, who it is for, and what would make the biggest difference.",
-  "I turn that into a focused scope with the screens, flows, integrations, or automations that matter first.",
-  "You get something you can use, hand over, improve, or keep building on.",
+  {
+    title: "Tell me what you need",
+    text: "A quick message, a loose idea, a current link, or a stuck workflow is enough to start.",
+  },
+  {
+    title: "We scope it together",
+    text: "I map the work, flag risks, and give you a clear quote before anything gets built.",
+  },
+  {
+    title: "I build, you stay in the loop",
+    text: "You get steady updates, visible progress, and room to give feedback as the project moves.",
+  },
 ];
 
 const TECH_GROUPS = [
@@ -178,15 +187,15 @@ const ServicesPage = () => {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           <ScrollReveal className="max-w-xl">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
-              How it usually starts
+              How it works
             </p>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
-              Start with the business problem.
+              Simple to get started.
             </h2>
             <p className="mt-6 text-base leading-8 text-foreground/84">
-              The first step is usually mapping what is happening now, who needs
-              to use it, and where time, trust, or clarity is being lost. From
-              there, I can shape a build that fits the real job.
+              You do not need a polished brief before reaching out. The early
+              work is figuring out what matters, what can wait, and what shape
+              the first useful version should take.
             </p>
           </ScrollReveal>
 
@@ -194,15 +203,20 @@ const ServicesPage = () => {
             <div className="grid gap-3">
               {HOW_IT_WORKS.map((step, index) => (
                 <div
-                  key={step}
+                  key={step.title}
                   className="grid gap-3 border-l-4 border-accent bg-surface px-5 py-4 shadow-[0_14px_30px_rgba(53,63,68,0.06)] sm:grid-cols-[2rem_1fr] sm:gap-4"
                 >
                   <p className="font-mono text-sm font-bold leading-7 text-accent">
                     0{index + 1}
                   </p>
-                  <p className="text-sm font-semibold leading-7 text-foreground/88">
-                    {step}
-                  </p>
+                  <div>
+                    <h3 className="text-base font-semibold leading-7 text-foreground">
+                      {step.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-7 text-foreground/82">
+                      {step.text}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
