@@ -1,10 +1,12 @@
 import type { JSX } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { CountUpNumber } from "./components/CountUpNumber";
 import { GoogleAppointmentButton } from "./components/GoogleAppointmentButton";
 import { ScrollReveal } from "./components/ScrollReveal";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
+import { caseStudies } from "./seo-content";
 
 type SectionHeadingProps = {
   eyebrow: string;
@@ -17,6 +19,62 @@ type Props = Record<string, never>;
 const GITHUB_URL = "https://github.com/huntingforelise";
 const LINKEDIN_URL = "https://www.linkedin.com/in/eliseverhoeye/";
 const SITE_URL = "https://www.elisebuilds.com";
+const YEARS_BUILDING = 4;
+
+const PinIcon = (): JSX.Element => {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+    >
+      <path d="M12 21s7-5.3 7-12a7 7 0 0 0-14 0c0 6.7 7 12 7 12Z" />
+      <circle cx="12" cy="9" r="2.5" />
+    </svg>
+  );
+};
+
+const LaptopIcon = (): JSX.Element => {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+    >
+      <rect x="5" y="4" width="14" height="11" rx="2" />
+      <path d="M3 19h18" />
+      <path d="M8 15h8" />
+    </svg>
+  );
+};
+
+const BuildIcon = (): JSX.Element => {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+    >
+      <path d="m14.7 6.3 3 3" />
+      <path d="M4 20l5.5-1.5L19 9a2.1 2.1 0 0 0-3-3l-9.5 9.5L5 20Z" />
+    </svg>
+  );
+};
 
 const SERVICES = [
   {
@@ -69,6 +127,54 @@ const HERO_HELP_ITEMS = [
   "A small internal tool or automation",
   "A review or rescue for AI-generated code",
 ];
+
+const ABOUT_FACTS = [
+  {
+    label: "Based in",
+    value: "Spain",
+    icon: <PinIcon />,
+  },
+  {
+    label: "Work style",
+    value: "Remote-first",
+    icon: <LaptopIcon />,
+  },
+  {
+    label: "Years building",
+    value: (
+      <>
+        <CountUpNumber value={YEARS_BUILDING} duration={900} />
+        <span aria-hidden="true">+</span>
+      </>
+    ),
+    icon: <BuildIcon />,
+  },
+];
+
+const TESTIMONIAL_PREVIEWS = [
+  {
+    client: "Casa Film & Music",
+    quote:
+      "Elise brought immediate clarity to my ideas and translated them into a well-structured, strategic website that truly makes sense.",
+  },
+  {
+    client: "Orca",
+    quote:
+      "She didn’t just implement, she delivered. She thought through edge cases carefully, tested thoroughly, and didn’t ship until it was right.",
+  },
+].map((preview) => {
+  const caseStudy = caseStudies.find((item) => item.client === preview.client);
+
+  if (!caseStudy) {
+    throw new Error(`Missing testimonial preview for ${preview.client}`);
+  }
+
+  return {
+    ...preview,
+    name: caseStudy.testimonial.name,
+    role: caseStudy.testimonial.role,
+  };
+});
 
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
@@ -276,13 +382,33 @@ const AboutPreview = (): JSX.Element => {
             that make work easier to manage. I like seeing ideas come to life,
             especially when the end result makes someone’s day easier.
           </p>
+          <div className="mt-7 grid max-w-2xl gap-2.5 sm:grid-cols-3">
+            {ABOUT_FACTS.map((item) => (
+              <div
+                key={item.label}
+                className="flex min-h-[68px] items-center gap-2.5 border border-border/50 bg-surface/78 px-3 py-2.5 shadow-[0_8px_18px_rgba(53,63,68,0.04)]"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent [&>svg]:h-4 [&>svg]:w-4">
+                  {item.icon}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[0.62rem] font-bold uppercase leading-4 tracking-[0.14em] text-foreground/58">
+                    {item.label}
+                  </p>
+                  <p className="text-sm font-semibold leading-5 text-foreground">
+                    {item.value}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
           <Link href="/about" className="cta-secondary mt-8 inline-flex">
             Read more about me
           </Link>
         </ScrollReveal>
 
         <ScrollReveal delay={0.08} y={18}>
-          <div className="relative mr-auto w-full max-w-[220px] border border-border/50 bg-surface p-3 shadow-[0_18px_40px_rgba(53,63,68,0.1)] lg:mx-auto lg:rotate-[2deg]">
+          <div className="relative mr-auto w-full max-w-[220px] border border-border/50 bg-surface p-3 shadow-[0_18px_40px_rgba(53,63,68,0.1)] lg:mx-auto">
             <div className="relative aspect-[4/5] overflow-hidden bg-surface-blue">
               <Image
                 src="/elise.png"
@@ -352,9 +478,60 @@ const WorkPreview = (): JSX.Element => {
   );
 };
 
+const TestimonialsPreview = (): JSX.Element => {
+  return (
+    <section className="border-t border-border/50 bg-background">
+      <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="Kind words"
+              title="People I’ve built with."
+              className="max-w-xl"
+            />
+            <p className="mt-5 max-w-md text-base leading-8 text-foreground/82">
+              A little social proof, because useful software is also about
+              clarity, ownership, and being easy to work with.
+            </p>
+            <Link href="/portfolio" className="cta-secondary mt-8 inline-flex">
+              Read case studies
+            </Link>
+          </ScrollReveal>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {TESTIMONIAL_PREVIEWS.map((item, index) => (
+              <ScrollReveal
+                key={item.client}
+                className="border border-border/50 bg-surface p-6 shadow-[0_16px_36px_rgba(53,63,68,0.07)]"
+                delay={index * 0.08}
+                y={18}
+              >
+                <figure>
+                  <p className="font-mono text-sm font-bold text-accent">
+                    {String(index + 1).padStart(2, "0")} / {item.client}
+                  </p>
+                  <blockquote className="mt-5 text-base font-semibold leading-8 text-foreground">
+                    “{item.quote}”
+                  </blockquote>
+                  <figcaption className="mt-6 border-t border-border/50 pt-5">
+                    <p className="font-semibold text-foreground">{item.name}</p>
+                    <p className="mt-1 text-sm leading-6 text-foreground/72">
+                      {item.role}
+                    </p>
+                  </figcaption>
+                </figure>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const ContactSection = (): JSX.Element => {
   return (
-    <section className="border-t border-border/50 bg-background" id="contact">
+    <section className="border-t border-border/50 bg-surface-warm" id="contact">
       <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <ScrollReveal>
           <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(53,63,68,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
@@ -401,6 +578,7 @@ const FreelancePositioningSite = (_props: Props): JSX.Element => {
         <AboutPreview />
         <ServicesPreview />
         <WorkPreview />
+        <TestimonialsPreview />
         <ContactSection />
       </main>
       <SiteFooter />
