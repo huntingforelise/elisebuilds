@@ -2,13 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import Link from "next/link";
-
-const menuLinks = [
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+import { navigationLinks } from "./navigation";
 
 export const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +65,7 @@ export const HamburgerMenu = () => {
           className="absolute right-0 top-full z-50 mt-3 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-border/60 bg-surface shadow-[0_18px_45px_rgba(40,50,59,0.16)]"
         >
           <div className="grid p-2">
-            {menuLinks.map((link) => (
+            {navigationLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
