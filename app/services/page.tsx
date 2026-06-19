@@ -8,14 +8,14 @@ import { SITE_URL } from "../seo-content";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Website, app, and workflow automation services by elisebuilds, including new builds and improvements to existing digital projects.",
+    "Website, app, SEO, GEO, AEO, and workflow automation services by elisebuilds, including new builds and improvements to existing digital projects.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: "Services | elisebuilds",
     description:
-      "Website, app, and workflow automation services by elisebuilds, including new builds and improvements to existing digital projects.",
+      "Website, app, SEO, GEO, AEO, and workflow automation services by elisebuilds, including new builds and improvements to existing digital projects.",
     url: `${SITE_URL}/services`,
     images: [
       {
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 
 const SERVICE_AREAS = [
   {
-    title: "Websites and web apps",
-    text: "A website, product page, booking flow, dashboard, or small web app that helps visitors understand what to do.",
+    title: "Websites, web apps and discoverability",
+    text: "A website, product page, booking flow, dashboard, or small web app that helps visitors, search engines, and AI tools understand what to do.",
   },
   {
     title: "App and product work",
@@ -85,7 +85,7 @@ const ServicesPage = () => {
     "@type": "CollectionPage",
     name: "Services",
     description:
-      "Freelance software engineering services across websites, apps, workflow automation, booking systems, and improvements to existing digital projects.",
+      "Freelance software engineering services across websites, apps, SEO, GEO, AEO, workflow automation, booking systems, and improvements to existing digital projects.",
     url: `${SITE_URL}/services`,
   };
 
@@ -127,7 +127,7 @@ const ServicesPage = () => {
               </p>
               <div className="mt-6 grid gap-3">
                 {[
-                  "A website that needs to say what you mean",
+                  "A website that needs to say what you mean and be easier to find",
                   "An app feature that needs a careful builder",
                   "A booking or enquiry flow for your customers",
                   "A small tool or automation for your team",

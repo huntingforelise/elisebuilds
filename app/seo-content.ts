@@ -63,16 +63,16 @@ export const services: ServicePageContent[] = [
     shortTitle: "Websites & web apps",
     eyebrow: "Websites & platforms",
     description:
-      "Custom website and web app development for service businesses, founders, and teams that need a clearer online presence, product flow, or improvement to an existing site.",
+      "Custom website and web app development for service businesses, founders, and teams that need a clearer online presence, product flow, SEO, GEO, AEO, or improvement to an existing site.",
     intro:
-      "I design, build, and improve modern websites and web apps that do more than look polished. The goal is to help people understand what you offer, use what you have built, and take the next useful step without friction.",
+      "I design, build, and improve modern websites and web apps that do more than look polished. The goal is to help people, search engines, and answer engines understand what you offer, use what you have built, and take the next useful step without friction.",
     image: {
       src: "/casa-film-website-screenshot.png",
       alt: "Casa Film and Music website shown on a desktop screen",
     },
     outcomes: [
       "A clearer structure for your services, offers, and calls to action",
-      "Pages that are easier for search engines and real people to understand",
+      "Pages that are easier for search engines, AI answer tools, and real people to understand",
       "A calmer enquiry flow that reduces avoidable back-and-forth",
       "A maintainable technical base that can grow or improve with the business",
     ],
@@ -81,6 +81,8 @@ export const services: ServicePageContent[] = [
       "Web app and dashboard interfaces",
       "Responsive page layouts",
       "SEO metadata and sitemap setup",
+      "GEO and AEO-ready content structure",
+      "Schema markup and structured data",
       "Contact or booking flow implementation",
       "Existing website improvements",
       "Analytics-ready deployment",

@@ -24,8 +24,8 @@ const YEARS_BUILDING = 4;
 
 const SERVICES = [
   {
-    title: "Websites & web apps",
-    text: "New builds, improvements, redesigns, booking flows, dashboards, and product pages.",
+    title: "Websites, web apps & discoverability",
+    text: "New builds, improvements, redesigns, booking flows, dashboards, product pages, and SEO/GEO/AEO foundations.",
   },
   {
     title: "Mobile apps & product work",
@@ -172,6 +172,9 @@ const STRUCTURED_DATA = {
         "React",
         "React Native",
         "TypeScript",
+        "SEO",
+        "GEO",
+        "AEO",
         "Supabase",
         "Sanity CMS",
         "Workflow automation",
@@ -201,6 +204,7 @@ const STRUCTURED_DATA = {
       priceRange: "$$",
       serviceType: [
         "Website development",
+        "SEO, GEO and AEO improvements",
         "Mobile app development",
         "Desktop app development",
         "Workflow automation",

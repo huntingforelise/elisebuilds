@@ -7,7 +7,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 const SITE_URL = "https://www.elisebuilds.com";
 const SITE_NAME = "elisebuilds";
 const SITE_DESCRIPTION =
-  "Freelance software engineer building and improving websites, apps, booking systems, and workflow automation for practical digital systems.";
+  "Freelance software engineer building and improving websites, apps, SEO, GEO, AEO, booking systems, and workflow automation for practical digital systems.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
     "elisebuilds",
     "freelance software engineer",
     "freelance website developer",
+    "SEO developer",
+    "technical SEO",
+    "GEO",
+    "generative engine optimization",
+    "AEO",
+    "answer engine optimization",
     "Next.js developer",
     "React developer",
     "React Native developer",
