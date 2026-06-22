@@ -96,8 +96,9 @@ const ServicesPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <section className="border-b border-border/50 bg-surface">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-20">
+      <section className="relative isolate overflow-hidden border-b border-border/50 bg-surface">
+        <div className="pointer-events-none absolute right-[7%] top-20 z-0 hidden h-28 w-28 border-[14px] border-accent/18 lg:block" />
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-20">
           <ScrollReveal className="max-w-3xl" y={18}>
             <p className="text-sm font-bold uppercase tracking-[0.26em] text-accent">
               Services I offer
@@ -121,11 +122,12 @@ const ServicesPage = () => {
           </ScrollReveal>
 
           <ScrollReveal className="lg:mt-8" delay={0.1} y={18}>
-            <div className="border border-border/50 bg-background p-6 shadow-[0_18px_40px_rgba(53,63,68,0.07)]">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+            <div className="relative border border-border/50 bg-background p-6 shadow-[0_18px_40px_rgba(5,5,7,0.07)]">
+              <div className="funky-grid pointer-events-none absolute inset-x-6 top-5 z-0 h-16 opacity-45" />
+              <p className="relative z-10 text-sm font-bold uppercase tracking-[0.24em] text-accent">
                 Good fit for
               </p>
-              <div className="mt-6 grid gap-3">
+              <div className="relative z-10 mt-6 grid gap-3">
                 {[
                   "A website that needs to say what you mean and be easier to find",
                   "An app feature that needs a careful builder",
@@ -145,8 +147,10 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="border-y border-border/50 bg-foreground text-surface">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.78fr_1.22fr] lg:px-8 lg:py-16">
+      <section className="relative isolate overflow-hidden border-y border-border/50 bg-foreground text-surface">
+        <div className="pointer-events-none absolute -right-8 top-12 z-0 hidden h-24 w-40 rotate-6 border border-surface/14 lg:block" />
+        <div className="pointer-events-none absolute bottom-10 left-[7%] z-0 hidden h-16 w-16 rounded-full bg-brand-sun/18 lg:block" />
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.78fr_1.22fr] lg:px-8 lg:py-16">
           <ScrollReveal>
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
               What I do
@@ -183,8 +187,10 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="bg-surface-blue">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
+      <section className="relative isolate overflow-hidden bg-surface-blue">
+        <div className="pointer-events-none absolute left-0 top-12 z-0 hidden h-20 w-1/5 rotate-2 border-y border-accent/18 md:block" />
+        <div className="pointer-events-none absolute right-[10%] bottom-12 z-0 hidden h-16 w-16 rounded-full border-[10px] border-brand-sun/20 lg:block" />
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           <ScrollReveal className="max-w-xl">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
               How it works
@@ -204,7 +210,7 @@ const ServicesPage = () => {
               {HOW_IT_WORKS.map((step, index) => (
                 <div
                   key={step.title}
-                  className="grid gap-3 border-l-4 border-accent bg-surface px-5 py-4 shadow-[0_14px_30px_rgba(53,63,68,0.06)] sm:grid-cols-[2rem_1fr] sm:gap-4"
+                  className="grid gap-3 border-l-4 border-accent bg-surface px-5 py-4 shadow-[0_14px_30px_rgba(5,5,7,0.06)] sm:grid-cols-[2rem_1fr] sm:gap-4"
                 >
                   <p className="font-mono text-sm font-bold leading-7 text-accent">
                     0{index + 1}
@@ -224,8 +230,10 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="border-y border-border/50 bg-surface">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[0.58fr_1.42fr] lg:items-start lg:px-8 lg:py-16">
+      <section className="relative isolate overflow-hidden border-y border-border/50 bg-surface">
+        <div className="pointer-events-none absolute right-[12%] top-10 z-0 hidden h-16 w-16 rounded-full border border-brand-sun/28 lg:block" />
+        <div className="pointer-events-none absolute left-[8%] bottom-12 z-0 hidden h-12 w-12 border border-accent/22 lg:block" />
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[0.58fr_1.42fr] lg:items-start lg:px-8 lg:py-16">
           <ScrollReveal>
             <div className="max-w-sm">
               <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
@@ -247,7 +255,7 @@ const ServicesPage = () => {
               {TECH_GROUPS.map((group) => (
                 <div
                   key={group.title}
-                  className="border-l-4 border-accent bg-surface p-4 shadow-[0_10px_24px_rgba(53,63,68,0.05)]"
+                  className="border-l-4 border-accent bg-surface p-4 shadow-[0_10px_24px_rgba(5,5,7,0.05)]"
                 >
                   <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-accent">
                     {group.title}
@@ -272,7 +280,7 @@ const ServicesPage = () => {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
           <ScrollReveal>
-            <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(53,63,68,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(5,5,7,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
                   Next step

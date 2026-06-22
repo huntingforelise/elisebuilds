@@ -70,8 +70,10 @@ const PortfolioPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <section className="border-b border-border/50 bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-18">
+      <section className="relative isolate overflow-hidden border-b border-border/50 bg-background">
+        <div className="pointer-events-none absolute right-[7%] top-14 z-0 hidden h-28 w-28 rounded-full border-[14px] border-accent/16 lg:block" />
+        <div className="pointer-events-none absolute right-[18%] bottom-12 z-0 hidden h-16 w-16 rotate-12 border border-brand-sun/38 lg:block" />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-18">
           <ScrollReveal className="max-w-5xl">
             <p className="text-sm font-bold uppercase tracking-[0.26em] text-accent">
               What I&apos;ve been up to
@@ -88,7 +90,7 @@ const PortfolioPage = () => {
               <span className="inline-flex items-center justify-center gap-2">
                 <CountUpNumber
                   value={3}
-                  className="rounded-full bg-accent-soft px-2 py-0.5 font-mono text-base font-black text-accent shadow-[0_8px_18px_rgba(216,111,75,0.22)]"
+                  className="rounded-full bg-accent-soft px-2 py-0.5 font-mono text-base font-black text-accent shadow-[0_8px_18px_rgba(216,79,119,0.22)]"
                 />
                 <span>live websites</span>
               </span>
@@ -123,7 +125,7 @@ const PortfolioPage = () => {
           </ScrollReveal>
 
           <ScrollReveal>
-            <article className="border border-border/50 bg-foreground p-8 text-surface shadow-[0_18px_40px_rgba(53,63,68,0.12)]">
+            <article className="border border-border/50 bg-foreground p-8 text-surface shadow-[0_18px_40px_rgba(5,5,7,0.12)]">
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                 <div>
                   <p className="font-mono text-sm font-bold text-accent">
@@ -146,7 +148,7 @@ const PortfolioPage = () => {
                   </p>
                 </div>
                 <div className="mx-auto w-full max-w-[190px]">
-                  <div className="rounded-[1.85rem] bg-foreground p-2 shadow-[0_18px_38px_rgba(40,50,59,0.18)] ring-1 ring-foreground/10">
+                  <div className="rounded-[1.85rem] bg-foreground p-2 shadow-[0_18px_38px_rgba(5,5,7,0.18)] ring-1 ring-foreground/10">
                     <div className="mx-auto mb-1.5 h-1.5 w-11 rounded-full bg-surface/25" />
                     <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.3rem] bg-surface">
                       <Image
@@ -166,7 +168,7 @@ const PortfolioPage = () => {
           {caseStudies.map((caseStudy, index) => (
             <ScrollReveal key={caseStudy.slug} delay={index * 0.08} y={18}>
               <article
-                className={`border border-border/50 p-6 shadow-[0_18px_40px_rgba(53,63,68,0.07)] lg:p-8 ${
+                className={`border border-border/50 p-6 shadow-[0_18px_40px_rgba(5,5,7,0.07)] lg:p-8 ${
                   index % 2 === 0 ? "bg-surface-strong" : "bg-background"
                 }`}
               >
@@ -195,7 +197,7 @@ const PortfolioPage = () => {
                     <ProjectLinks slug={caseStudy.slug} />
                   </div>
 
-                  <div className="border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(53,63,68,0.08)]">
+                  <div className="border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(5,5,7,0.08)]">
                     <div className="relative aspect-[16/10] overflow-hidden bg-surface-blue">
                       <Image
                         src={caseStudy.image.src}
@@ -230,7 +232,7 @@ const PortfolioPage = () => {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
           <ScrollReveal>
-            <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(53,63,68,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(5,5,7,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
                   Next step

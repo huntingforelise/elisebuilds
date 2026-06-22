@@ -34,7 +34,7 @@ export const HamburgerMenu = () => {
         aria-expanded={isOpen}
         aria-controls={menuId}
         onClick={() => setIsOpen((current) => !current)}
-        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border-2 border-border bg-surface text-foreground transition hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border-2 border-surface/20 bg-surface text-foreground transition hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
       >
         <span className="sr-only">
           {isOpen ? "Close navigation menu" : "Open navigation menu"}

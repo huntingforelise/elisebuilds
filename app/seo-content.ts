@@ -327,7 +327,7 @@ export const infoPages: InfoPageContent[] = [
     intro:
       "If you need a better website, app, booking flow, internal tool, automation, or improvement to an existing project, you can start with a short message or book a time to talk through what you need.",
     image: {
-      src: "/elisebuilds.svg",
+      src: "/elisebuilds.png",
       alt: "elisebuilds logo",
     },
     sections: [

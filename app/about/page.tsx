@@ -182,12 +182,12 @@ const DetailIcon = ({ name }: { name: DetailIconName }): JSX.Element => {
 
 const WorkLinksSection = (): JSX.Element => {
   const socialLinkClass =
-    "border-2 border-border bg-surface px-7 py-3.5 text-sm font-bold tracking-[0.02em] text-foreground transition hover:-translate-y-0.5 hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "rounded-full border-2 border-border bg-surface px-7 py-3.5 text-sm font-bold tracking-[0.02em] text-foreground transition hover:-translate-y-0.5 hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
   return (
     <section className="border-t border-border/50 bg-surface-strong">
       <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
-        <ScrollReveal className="border border-border/50 bg-surface p-8 text-center shadow-[0_20px_50px_rgba(53,63,68,0.08)]">
+        <ScrollReveal className="border border-border/50 bg-surface p-8 text-center shadow-[0_20px_50px_rgba(5,5,7,0.08)]">
           <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
             A small note
           </p>
@@ -225,11 +225,12 @@ const AboutPage = (): JSX.Element => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
       />
 
-      <section className="relative overflow-hidden border-b border-border/50">
-        <div className="absolute left-0 top-10 hidden h-8 w-2/5 -rotate-2 bg-accent/18 md:block" />
-        <div className="absolute bottom-12 right-0 hidden h-10 w-1/3 rotate-2 bg-surface-blue md:block" />
+      <section className="relative isolate overflow-hidden border-b border-border/50">
+        <div className="pointer-events-none absolute left-0 top-14 z-0 hidden h-12 w-1/4 -rotate-3 bg-brand-sun/14 md:block" />
+        <div className="pointer-events-none absolute bottom-14 right-[5%] z-0 hidden h-24 w-24 rounded-full border-[14px] border-accent/16 lg:block" />
+        <div className="pointer-events-none absolute bottom-20 right-[40%] z-0 hidden h-20 w-20 rotate-12 border border-foreground/12 lg:block" />
 
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-24">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-24">
           <ScrollReveal className="relative z-10 max-w-3xl" y={18}>
             <Eyebrow>About the builder</Eyebrow>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
@@ -263,8 +264,9 @@ const AboutPage = (): JSX.Element => {
             y={22}
           >
             <div className="relative">
-              <div className="absolute -left-4 top-8 hidden h-full w-full bg-surface-strong lg:block lg:rotate-[-3deg]" />
-              <div className="relative border border-border/50 bg-surface p-4 shadow-[0_22px_55px_rgba(53,63,68,0.1)] lg:rotate-[1.5deg]">
+              <div className="pointer-events-none absolute -right-5 -top-5 z-0 hidden h-28 w-28 rounded-full border-[16px] border-accent/18 lg:block" />
+              <div className="pointer-events-none absolute -left-5 bottom-8 z-0 hidden h-24 w-24 rounded-full bg-brand-sun/16 lg:block" />
+              <div className="relative border border-border/50 bg-surface p-4 shadow-[0_22px_55px_rgba(5,5,7,0.1)] lg:rotate-[1.5deg]">
                 <div className="relative aspect-[4/5] overflow-hidden bg-surface-blue">
                   <Image
                     src="/elise.png"
@@ -282,8 +284,10 @@ const AboutPage = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="bg-surface-strong">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+      <section className="relative isolate overflow-hidden bg-surface-strong">
+        <div className="pointer-events-none absolute right-[8%] top-14 z-0 hidden h-14 w-14 rotate-12 bg-brand-sun/16 lg:block" />
+        <div className="pointer-events-none absolute left-[7%] bottom-12 z-0 hidden h-16 w-16 rounded-full border border-accent/22 lg:block" />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 lg:px-8">
           <ScrollReveal>
             <div className="max-w-3xl">
               <Eyebrow>A few details</Eyebrow>
@@ -298,7 +302,7 @@ const AboutPage = (): JSX.Element => {
               {SNAPSHOTS.map((item) => (
                 <div
                   key={item.label}
-                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(53,63,68,0.06)]"
+                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(5,5,7,0.06)]"
                 >
                   <div className="flex items-start gap-4">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-accent-soft text-accent">
@@ -322,7 +326,7 @@ const AboutPage = (): JSX.Element => {
               {PROFILE_DETAILS.map((item) => (
                 <div
                   key={item.title}
-                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(53,63,68,0.06)]"
+                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(5,5,7,0.06)]"
                 >
                   <div className="flex items-start gap-4">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-surface-warm text-accent">
@@ -344,8 +348,10 @@ const AboutPage = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="bg-surface-blue">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+      <section className="relative isolate overflow-hidden bg-surface-blue">
+        <div className="pointer-events-none absolute -left-8 top-12 z-0 hidden h-24 w-24 rounded-full border border-accent/24 lg:block" />
+        <div className="pointer-events-none absolute right-[8%] bottom-16 z-0 hidden h-10 w-28 -rotate-2 bg-foreground/8 lg:block" />
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <ScrollReveal>
             <Eyebrow>Working style</Eyebrow>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
@@ -363,7 +369,7 @@ const AboutPage = (): JSX.Element => {
               {WORK_VALUES.map((item) => (
                 <div
                   key={item.title}
-                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(53,63,68,0.06)]"
+                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(5,5,7,0.06)]"
                 >
                   <div className="flex items-start gap-4">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-accent-soft text-accent">
@@ -385,8 +391,10 @@ const AboutPage = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="border-y border-border/50 bg-foreground text-surface">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <section className="relative isolate overflow-hidden border-y border-border/50 bg-foreground text-surface">
+        <div className="pointer-events-none absolute -right-10 top-14 z-0 hidden h-28 w-28 rounded-full border border-surface/14 lg:block" />
+        <div className="pointer-events-none absolute bottom-12 left-[8%] z-0 hidden h-12 w-12 rounded-full bg-accent/24 lg:block" />
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <ScrollReveal>
             <Eyebrow>What I am good for</Eyebrow>
             <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
@@ -414,10 +422,11 @@ const AboutPage = (): JSX.Element => {
 
       <WorkLinksSection />
 
-      <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+      <section className="relative isolate overflow-hidden bg-background">
+        <div className="pointer-events-none absolute right-[9%] top-12 z-0 hidden h-16 w-16 rounded-full border border-accent/25 lg:block" />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 lg:px-8">
           <ScrollReveal>
-            <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(53,63,68,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(5,5,7,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <Eyebrow>Next step</Eyebrow>
                 <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">

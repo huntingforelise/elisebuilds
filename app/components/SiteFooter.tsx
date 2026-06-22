@@ -11,16 +11,17 @@ const footerLinks = [
 
 export const SiteFooter = (): JSX.Element => {
   return (
-    <footer className="border-t border-border/50 bg-foreground text-surface">
+    <footer className="relative overflow-hidden border-t border-border/50 bg-foreground text-surface">
+      <div className="absolute -right-10 top-8 h-28 w-28 rounded-full border-[18px] border-accent/25" />
       <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-md">
             <Image
-              src="/elisebuilds.svg"
+              src="/elisebuilds.png"
               alt="Elise Verhoeye logo"
-              width={196}
-              height={72}
-              className="h-auto w-44 brightness-0 invert"
+              width={1456}
+              height={310}
+              className="h-auto w-44"
             />
             <p className="mt-5 text-sm leading-7 text-surface/78">
               Websites, apps, and automations that make your business easier to
@@ -34,7 +35,7 @@ export const SiteFooter = (): JSX.Element => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-semibold text-surface/86 transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-foreground"
+                    className="underline-offset-8 decoration-2 text-sm font-semibold text-surface/86 transition hover:text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-foreground"
                   >
                     {link.label}
                   </Link>

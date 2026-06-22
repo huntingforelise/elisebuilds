@@ -195,7 +195,7 @@ const STRUCTURED_DATA = {
       "@id": `${SITE_URL}/#business`,
       name: "elisebuilds",
       url: SITE_URL,
-      image: `${SITE_URL}/elisebuilds.svg`,
+      image: `${SITE_URL}/elisebuilds.png`,
       email: "mailto:elise@elisebuilds.com",
       founder: {
         "@id": `${SITE_URL}/#person`,
@@ -238,21 +238,24 @@ const SectionHeading = ({
 
 const Hero = (): JSX.Element => {
   return (
-    <section className="relative overflow-hidden border-b border-border/50 bg-background">
-      <div className="absolute left-0 top-8 hidden h-8 w-2/5 -rotate-2 bg-accent/18 md:block" />
-      <div className="absolute bottom-8 right-0 hidden h-10 w-1/3 rotate-2 bg-surface-blue md:block" />
+    <section className="relative isolate overflow-hidden border-b border-border/50 bg-accent-ink">
+      <div className="brand-stripe pointer-events-none absolute left-0 top-8 z-0 hidden h-14 w-2/5 -rotate-2 bg-brand-sun/18 md:block" />
+      <div className="pointer-events-none absolute bottom-10 right-0 z-0 hidden h-20 w-1/3 rotate-2 bg-brand-sun/18 md:block" />
+      <div className="pointer-events-none absolute right-[8%] top-14 z-0 hidden h-28 w-28 rounded-full border border-surface/20 lg:block" />
+      <div className="pointer-events-none absolute right-[18%] bottom-16 z-0 hidden h-12 w-12 rounded-full bg-accent/28 lg:block" />
+      <div className="pointer-events-none absolute bottom-20 left-[42%] z-0 hidden h-14 w-14 rotate-12 border border-brand-sun/55 lg:block" />
 
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-20">
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-20">
         <ScrollReveal className="relative z-10 max-w-3xl" y={18}>
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.26em] text-accent">
             Websites, apps & automations
           </p>
 
-          <h1 className="text-4xl font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
-            I build digital solutions that make businesses run smoother.
+          <h1 className="text-4xl font-semibold leading-[1.05] text-surface sm:text-5xl lg:text-6xl">
+            I build digital solutions with a bit more spark.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/92">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-surface/82">
             That might mean a new website, a better booking flow, a mobile app,
             an internal tool, or thoughtful help with a project that already
             exists. I’m especially useful for founders and small teams who need
@@ -260,10 +263,16 @@ const Hero = (): JSX.Element => {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/contact" className="cta-primary">
+            <Link
+              href="/contact"
+              className="cta-primary cta-primary-on-dark"
+            >
               Start a project
             </Link>
-            <Link href="/services" className="cta-secondary">
+            <Link
+              href="/services"
+              className="cta-secondary border-surface/25 bg-surface/8 text-surface hover:border-brand-sun hover:text-brand-sun"
+            >
               Explore services
             </Link>
           </div>
@@ -271,18 +280,27 @@ const Hero = (): JSX.Element => {
 
         <ScrollReveal className="relative z-10 lg:mt-8" delay={0.12} y={22}>
           <div className="relative">
-            <div className="absolute -left-4 top-8 hidden h-full w-full bg-surface-strong lg:block lg:rotate-[-3deg]" />
-            <div className="relative border border-border/60 bg-surface p-8 shadow-[0_22px_55px_rgba(53,63,68,0.1)] lg:rotate-[1.5deg]">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+            <div className="pointer-events-none absolute -left-4 top-8 z-0 hidden h-full w-full bg-brand-sun/22 lg:block lg:rotate-[-2deg]" />
+            <div className="brand-shadow relative border border-surface/20 bg-surface p-8 lg:rotate-[1deg]">
+              <p className="relative text-sm font-bold uppercase tracking-[0.2em] text-accent">
                 What I can help with
               </p>
 
-              <div className="mt-8 space-y-3">
-                {HERO_HELP_ITEMS.map((item) => (
+              <div className="relative mt-8 space-y-3">
+                {HERO_HELP_ITEMS.map((item, index) => (
                   <div
                     key={item}
-                    className="border-l-4 border-accent bg-background px-4 py-3 text-sm font-bold leading-7 text-foreground"
+                    className="group flex items-center gap-3 border border-border/60 bg-background px-4 py-3 text-sm font-bold leading-7 text-foreground transition hover:-translate-y-1 hover:border-accent/65 hover:bg-surface"
                   >
+                    <span
+                      className={`h-3 w-3 shrink-0 rounded-full ${
+                        index % 3 === 0
+                          ? "bg-accent"
+                          : index % 3 === 1
+                            ? "bg-brand-sun"
+                            : "bg-brand-sun"
+                      }`}
+                    />
                     {item}
                   </div>
                 ))}
@@ -297,8 +315,8 @@ const Hero = (): JSX.Element => {
 
 const ServicesPreview = (): JSX.Element => {
   return (
-    <section className="border-t border-border/50 bg-surface">
-      <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
+    <section className="relative isolate overflow-hidden border-t border-border/50 bg-surface">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
         <ScrollReveal>
           <SectionHeading
             eyebrow="What I specialise in"
@@ -311,17 +329,26 @@ const ServicesPreview = (): JSX.Element => {
           {SERVICES.map((item, index) => (
             <ScrollReveal
               key={item.title}
-              className="border border-border/50 bg-surface p-5 shadow-[0_16px_35px_rgba(53,63,68,0.06)] transition hover:-translate-y-1 hover:border-accent/45 sm:p-6"
+              className="relative overflow-hidden border border-border/70 bg-surface p-5 shadow-[0_16px_35px_rgba(36,27,58,0.07)] transition hover:-translate-y-1 hover:border-accent/65 sm:p-6"
               delay={index * 0.08}
               y={22}
             >
-              <p className="mb-5 font-mono text-sm font-bold text-accent">
+              <div
+                className={`pointer-events-none absolute right-4 top-4 z-0 h-10 w-10 ${
+                  index === 0
+                    ? "bg-accent-soft"
+                    : index === 1
+                      ? "bg-surface-blue"
+                      : "bg-brand-sun/65"
+                }`}
+              />
+              <p className="relative mb-5 font-mono text-sm font-bold text-accent">
                 0{index + 1}
               </p>
-              <h3 className="text-lg font-semibold text-foreground sm:text-xl">
+              <h3 className="relative text-lg font-semibold text-foreground sm:text-xl">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-7 text-foreground/92 sm:mt-3">
+              <p className="relative mt-2 text-sm leading-7 text-foreground/92 sm:mt-3">
                 {item.text}
               </p>
             </ScrollReveal>
@@ -355,11 +382,11 @@ const ProcessPreview = (): JSX.Element => {
           </Link>
         </ScrollReveal>
 
-        <div className="grid gap-0 border-y border-border/50">
+        <div className="grid gap-3">
           {PROCESS_STEPS.map((step, index) => (
             <ScrollReveal key={step.title} delay={index * 0.06} y={16}>
-              <div className="grid gap-3 border-b border-border/50 bg-surface px-0 py-6 last:border-b-0 sm:grid-cols-[3rem_1fr] sm:gap-5 sm:px-5">
-                <p className="font-mono text-sm font-bold leading-7 text-accent">
+              <div className="grid gap-3 border border-border/60 bg-surface px-5 py-6 shadow-[0_14px_32px_rgba(36,27,58,0.07)] transition hover:-translate-y-1 sm:grid-cols-[3rem_1fr] sm:gap-5">
+                <p className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-ink font-mono text-sm font-bold leading-7 text-surface">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <div>
@@ -381,8 +408,9 @@ const ProcessPreview = (): JSX.Element => {
 
 const AboutPreview = (): JSX.Element => {
   return (
-    <section className="border-t border-border/50 bg-surface-warm">
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[1fr_240px] lg:items-center lg:px-8 lg:py-16">
+    <section className="relative isolate overflow-hidden border-t border-border/50 bg-surface-warm">
+      <div className="pointer-events-none absolute -left-8 top-16 z-0 hidden h-24 w-24 bg-brand-sun/16 md:block" />
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[1fr_240px] lg:items-center lg:px-8 lg:py-16">
         <ScrollReveal>
           <SectionHeading
             eyebrow="About me"
@@ -400,7 +428,7 @@ const AboutPreview = (): JSX.Element => {
             {ABOUT_FACTS.map((item) => (
               <div
                 key={item.label}
-                className="flex min-h-[68px] items-center gap-2.5 border border-border/50 bg-surface/78 px-3 py-2.5 shadow-[0_8px_18px_rgba(53,63,68,0.04)]"
+                className="flex min-h-[68px] items-center gap-2.5 border border-border/50 bg-surface/86 px-3 py-2.5 shadow-[0_8px_18px_rgba(36,27,58,0.05)]"
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent [&>svg]:h-4 [&>svg]:w-4">
                   {item.icon}
@@ -422,8 +450,9 @@ const AboutPreview = (): JSX.Element => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.08} y={18}>
-          <div className="relative mr-auto w-full max-w-[220px] border border-border/50 bg-surface p-3 shadow-[0_18px_40px_rgba(53,63,68,0.1)] lg:mx-auto">
-            <div className="relative aspect-[4/5] overflow-hidden bg-surface-blue">
+          <div className="relative mr-auto w-full max-w-[220px] border border-border/60 bg-surface p-3 shadow-[0_18px_40px_rgba(36,27,58,0.12)] lg:mx-auto lg:-rotate-2">
+            <div className="wiggle-float-delayed pointer-events-none absolute -right-5 -top-4 z-0 hidden h-10 w-10 bg-brand-sun lg:block" />
+            <div className="relative z-10 aspect-[4/5] overflow-hidden bg-surface-blue">
               <Image
                 src="/elise.png"
                 alt="Elise Verhoeye photo"
@@ -456,7 +485,7 @@ const WorkPreview = (): JSX.Element => {
           {WORK_PREVIEWS.map((item, index) => (
             <ScrollReveal
               key={item.title}
-              className="overflow-hidden border border-border/50 bg-surface shadow-[0_14px_32px_rgba(53,63,68,0.08)] transition hover:-translate-y-1 hover:border-accent/45 hover:shadow-[0_20px_46px_rgba(53,63,68,0.12)]"
+              className="overflow-hidden border border-border/60 bg-surface shadow-[0_16px_36px_rgba(36,27,58,0.09)] transition hover:-translate-y-1 hover:border-accent/65"
               delay={index * 0.08}
               y={20}
             >
@@ -494,8 +523,10 @@ const WorkPreview = (): JSX.Element => {
 
 const TestimonialsPreview = (): JSX.Element => {
   return (
-    <section className="border-t border-border/50 bg-background">
-      <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
+    <section className="relative isolate overflow-hidden border-t border-border/50 bg-background">
+      <div className="brand-stripe pointer-events-none absolute bottom-10 left-0 z-0 hidden h-9 w-1/3 -rotate-2 bg-brand-sun/20 md:block" />
+      <div className="pointer-events-none absolute right-[9%] top-14 z-0 hidden h-16 w-16 rounded-full border border-accent/28 lg:block" />
+      <div className="relative z-10 mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <ScrollReveal>
             <SectionHeading
@@ -516,7 +547,7 @@ const TestimonialsPreview = (): JSX.Element => {
             {TESTIMONIAL_PREVIEWS.map((item, index) => (
               <ScrollReveal
                 key={item.client}
-                className="border border-border/50 bg-surface p-6 shadow-[0_16px_36px_rgba(53,63,68,0.07)]"
+                className="border border-border/50 bg-surface p-6 shadow-[0_16px_36px_rgba(36,27,58,0.08)]"
                 delay={index * 0.08}
                 y={18}
               >
@@ -548,9 +579,9 @@ const ContactSection = (): JSX.Element => {
     <section className="border-t border-border/50 bg-surface-blue" id="contact">
       <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <ScrollReveal>
-          <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(53,63,68,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="brand-shadow grid gap-8 border border-foreground/15 bg-surface p-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">
                 Get in touch
               </p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
