@@ -139,7 +139,7 @@ const STRUCTURED_DATA = {
 
 const Eyebrow = ({ children }: { children: string }): JSX.Element => {
   return (
-    <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+    <p className="eyebrow text-accent">
       {children}
     </p>
   );
@@ -188,10 +188,10 @@ const WorkLinksSection = (): JSX.Element => {
     <section className="border-t border-border/50 bg-surface-strong">
       <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
         <ScrollReveal className="border border-border/50 bg-surface p-8 text-center shadow-[0_20px_50px_rgba(5,5,7,0.08)]">
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+          <p className="eyebrow text-accent">
             A small note
           </p>
-          <h2 className="mt-4 text-3xl font-semibold text-foreground">
+          <h2 className="mt-4 text-3xl text-foreground">
             Despite my love for automation, I am not a robot.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-foreground/92">
@@ -226,14 +226,11 @@ const AboutPage = (): JSX.Element => {
       />
 
       <section className="relative isolate overflow-hidden border-b border-border/50">
-        <div className="pointer-events-none absolute left-0 top-14 z-0 hidden h-12 w-1/4 -rotate-3 bg-brand-sun/14 md:block" />
-        <div className="pointer-events-none absolute bottom-14 right-[5%] z-0 hidden h-24 w-24 rounded-full border-[14px] border-accent/16 lg:block" />
-        <div className="pointer-events-none absolute bottom-20 right-[40%] z-0 hidden h-20 w-20 rotate-12 border border-foreground/12 lg:block" />
-
+        <div className="grid-overlay-light pointer-events-none absolute inset-0 opacity-70" />
         <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-24">
           <ScrollReveal className="relative z-10 max-w-3xl" y={18}>
             <Eyebrow>About the builder</Eyebrow>
-            <h1 className="mt-4 text-4xl font-semibold leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="poster-heading mt-4 text-4xl leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
               I&apos;m Elise, lovely to meet you.
             </h1>
             <div className="mt-6 max-w-2xl space-y-5 text-base leading-8 text-foreground/84">
@@ -264,9 +261,7 @@ const AboutPage = (): JSX.Element => {
             y={22}
           >
             <div className="relative">
-              <div className="pointer-events-none absolute -right-5 -top-5 z-0 hidden h-28 w-28 rounded-full border-[16px] border-accent/18 lg:block" />
-              <div className="pointer-events-none absolute -left-5 bottom-8 z-0 hidden h-24 w-24 rounded-full bg-brand-sun/16 lg:block" />
-              <div className="relative border border-border/50 bg-surface p-4 shadow-[0_22px_55px_rgba(5,5,7,0.1)] lg:rotate-[1.5deg]">
+              <div className="relative border border-border/50 bg-surface p-4 shadow-[0_22px_55px_rgba(18,26,42,0.1)]">
                 <div className="relative aspect-[4/5] overflow-hidden bg-surface-blue">
                   <Image
                     src="/elise.png"
@@ -285,13 +280,11 @@ const AboutPage = (): JSX.Element => {
       </section>
 
       <section className="relative isolate overflow-hidden bg-surface-strong">
-        <div className="pointer-events-none absolute right-[8%] top-14 z-0 hidden h-14 w-14 rotate-12 bg-brand-sun/16 lg:block" />
-        <div className="pointer-events-none absolute left-[7%] bottom-12 z-0 hidden h-16 w-16 rounded-full border border-accent/22 lg:block" />
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 lg:px-8">
           <ScrollReveal>
             <div className="max-w-3xl">
               <Eyebrow>A few details</Eyebrow>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+              <h2 className="mt-3 text-3xl leading-tight text-foreground sm:text-4xl">
                 A small mix of places, languages, and practical experience.
               </h2>
             </div>
@@ -309,7 +302,7 @@ const AboutPage = (): JSX.Element => {
                       <DetailIcon name={item.icon} />
                     </span>
                     <div>
-                      <h3 className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-bold leading-5 text-foreground">
+                      <h3 className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm leading-5 text-foreground">
                         <span className="font-mono text-2xl leading-none text-accent">
                           {item.value}
                         </span>
@@ -333,7 +326,7 @@ const AboutPage = (): JSX.Element => {
                       <DetailIcon name={item.icon} />
                     </span>
                     <div>
-                      <h3 className="text-sm font-bold leading-5 text-foreground">
+                      <h3 className="text-sm leading-5 text-foreground">
                         {item.title}
                       </h3>
                       <p className="mt-2 text-sm leading-6 text-foreground/72">
@@ -349,12 +342,10 @@ const AboutPage = (): JSX.Element => {
       </section>
 
       <section className="relative isolate overflow-hidden bg-surface-blue">
-        <div className="pointer-events-none absolute -left-8 top-12 z-0 hidden h-24 w-24 rounded-full border border-accent/24 lg:block" />
-        <div className="pointer-events-none absolute right-[8%] bottom-16 z-0 hidden h-10 w-28 -rotate-2 bg-foreground/8 lg:block" />
         <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <ScrollReveal>
             <Eyebrow>Working style</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+            <h2 className="mt-3 text-3xl leading-tight text-foreground sm:text-4xl">
               Calm, careful, and kind.
             </h2>
             <p className="mt-6 text-base leading-8 text-foreground/84">
@@ -376,7 +367,7 @@ const AboutPage = (): JSX.Element => {
                       <DetailIcon name={item.icon} />
                     </span>
                     <div>
-                      <h3 className="text-sm font-bold leading-5 text-foreground">
+                      <h3 className="text-sm leading-5 text-foreground">
                         {item.title}
                       </h3>
                       <p className="mt-2 text-sm leading-6 text-foreground/72">
@@ -391,13 +382,12 @@ const AboutPage = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden border-y border-border/50 bg-foreground text-surface">
-        <div className="pointer-events-none absolute -right-10 top-14 z-0 hidden h-28 w-28 rounded-full border border-surface/14 lg:block" />
-        <div className="pointer-events-none absolute bottom-12 left-[8%] z-0 hidden h-12 w-12 rounded-full bg-accent/24 lg:block" />
+      <section className="relative isolate overflow-hidden border-y border-border/50 bg-accent-ink text-surface">
+        <div className="grain-overlay pointer-events-none absolute inset-0 opacity-55" />
         <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <ScrollReveal>
             <Eyebrow>What I am good for</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
+            <h2 className="mt-3 text-3xl leading-tight sm:text-4xl">
               Helpful when you know what you want, and when you really do not
               yet.
             </h2>
@@ -423,13 +413,12 @@ const AboutPage = (): JSX.Element => {
       <WorkLinksSection />
 
       <section className="relative isolate overflow-hidden bg-background">
-        <div className="pointer-events-none absolute right-[9%] top-12 z-0 hidden h-16 w-16 rounded-full border border-accent/25 lg:block" />
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 lg:px-8">
           <ScrollReveal>
             <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(5,5,7,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <Eyebrow>Next step</Eyebrow>
-                <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+                <h2 className="mt-3 text-3xl leading-tight text-foreground sm:text-4xl">
                   Got something you want to make easier?
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-8 text-foreground/82">

@@ -46,10 +46,10 @@ const WorkPage = () => {
       <section className="border-b border-border/50 bg-background">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 lg:grid-cols-[1fr_auto] lg:items-end lg:px-8 lg:py-18">
           <ScrollReveal className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.26em] text-accent">
+            <p className="eyebrow text-accent">
               Work
             </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 text-4xl leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
               Work that had to survive contact with real people.
             </h1>
             <p className="mt-6 text-lg leading-8 text-foreground/92">
@@ -60,7 +60,7 @@ const WorkPage = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.08} y={14}>
-            <div className="grid grid-cols-3 border border-border/50 bg-surface text-center shadow-[0_14px_32px_rgba(53,63,68,0.06)]">
+            <div className="grid grid-cols-3 border border-border/50 bg-surface text-center shadow-[0_14px_32px_rgba(18,26,42,0.06)]">
               <div className="border-r border-border/50 px-4 py-5">
                 <p className="font-mono text-xl font-bold text-accent">01</p>
                 <p className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-foreground/70">
@@ -86,16 +86,16 @@ const WorkPage = () => {
         </div>
       </section>
 
-      <section className="bg-surface">
+      <section className="bg-surface-blue">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-16 lg:px-8">
           <ScrollReveal>
-            <article className="border border-border/50 bg-foreground p-8 text-surface shadow-[0_18px_40px_rgba(53,63,68,0.12)]">
+            <article className="border border-surface/12 bg-accent-ink p-8 text-surface shadow-[0_18px_40px_rgba(18,26,42,0.12)]">
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                 <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+                  <p className="eyebrow text-accent">
                     Current work
                   </p>
-                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-surface sm:text-3xl">
+                  <h2 className="poster-heading mt-3 text-2xl leading-tight text-surface sm:text-3xl">
                     Real estate mobile app
                   </h2>
                   <p className="mt-4 text-base leading-8 text-surface/82">
@@ -106,7 +106,7 @@ const WorkPage = () => {
                   </p>
                 </div>
                 <div className="mx-auto w-full max-w-[190px]">
-                  <div className="rounded-[1.85rem] bg-foreground p-2 shadow-[0_18px_38px_rgba(40,50,59,0.18)] ring-1 ring-foreground/10">
+                  <div className="rounded-[1.85rem] bg-accent-ink p-2 shadow-[0_18px_38px_rgba(18,26,42,0.18)] ring-1 ring-foreground/10">
                     <div className="mx-auto mb-1.5 h-1.5 w-11 rounded-full bg-surface/25" />
                     <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.3rem] bg-surface">
                       <Image
@@ -126,8 +126,8 @@ const WorkPage = () => {
           {caseStudies.map((caseStudy, index) => (
             <ScrollReveal key={caseStudy.slug} delay={index * 0.08} y={18}>
               <article
-                className={`border border-border/50 p-6 shadow-[0_18px_40px_rgba(53,63,68,0.07)] lg:p-8 ${
-                  index % 2 === 0 ? "bg-surface-strong" : "bg-background"
+                className={`border border-border/50 p-6 shadow-[0_18px_40px_rgba(18,26,42,0.07)] lg:p-8 ${
+                  index % 2 === 0 ? "bg-surface" : "bg-background"
                 }`}
               >
                 <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -135,7 +135,7 @@ const WorkPage = () => {
                     <p className="font-mono text-sm font-bold text-accent">
                       {String(index + 1).padStart(2, "0")} / {caseStudy.client}
                     </p>
-                    <h2 className="mt-4 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
+                    <h2 className="poster-heading mt-4 text-2xl leading-tight text-foreground sm:text-3xl">
                       {caseStudy.projectType}
                     </h2>
                     <p className="mt-4 text-base leading-8 text-foreground/90">
@@ -161,7 +161,7 @@ const WorkPage = () => {
 
                   <div>
                     <div
-                      className={`rotate-[1deg] border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(53,63,68,0.08)] ${
+                      className={`border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(18,26,42,0.08)] ${
                         caseStudy.slug === "/work/orca"
                           ? "mx-auto w-full max-w-[260px]"
                           : ""
@@ -217,7 +217,7 @@ const WorkPage = () => {
 
       <section className="border-t border-border/50 bg-surface-blue">
         <div className="mx-auto max-w-4xl px-6 py-16 text-center lg:px-8">
-          <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">
+          <h2 className="text-3xl text-foreground sm:text-4xl">
             Have a similar project in mind?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-foreground/92">

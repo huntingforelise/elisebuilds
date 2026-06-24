@@ -78,10 +78,10 @@ const SectionHeading = ({
 }): JSX.Element => {
   return (
     <div>
-      <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+      <p className="eyebrow text-accent">
         {eyebrow}
       </p>
-      <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
+      <h2 className="mt-3 text-3xl text-foreground sm:text-4xl">
         {title}
       </h2>
     </div>
@@ -130,10 +130,10 @@ export const ServiceLandingPage = ({ page }: ServicePageProps): JSX.Element => {
       <section className="border-b border-border/50 bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-18">
           <div className="max-w-4xl">
-            <p className="text-sm font-bold uppercase tracking-[0.26em] text-accent">
+            <p className="eyebrow text-accent">
               {page.eyebrow}
             </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 text-4xl leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
               {page.title}
             </h1>
             <p className="mt-6 text-lg leading-8 text-foreground/92">
@@ -216,10 +216,10 @@ export const ServiceLandingPage = ({ page }: ServicePageProps): JSX.Element => {
                   href={related.slug}
                   className="border border-border/50 bg-surface p-6 transition hover:-translate-y-1 hover:border-accent/45"
                 >
-                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">
+                  <p className="eyebrow text-accent">
                     {related.eyebrow}
                   </p>
-                  <h3 className="mt-3 text-xl font-semibold">
+                  <h3 className="mt-3 text-xl">
                     {related.shortTitle}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-foreground/85">
@@ -264,10 +264,10 @@ export const CaseStudyPage = ({ page }: CaseStudyPageProps): JSX.Element => {
       <section className="border-b border-border/50 bg-background">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-18">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.26em] text-accent">
+            <p className="eyebrow text-accent">
               {page.eyebrow}
             </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 text-4xl leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
               {page.title}
             </h1>
             <p className="mt-6 text-lg leading-8 text-foreground/92">
@@ -275,13 +275,13 @@ export const CaseStudyPage = ({ page }: CaseStudyPageProps): JSX.Element => {
             </p>
             <dl className="mt-8 grid gap-4 border border-border/50 bg-surface p-6 sm:grid-cols-2">
               <div>
-                <dt className="text-sm font-bold uppercase tracking-[0.2em] text-accent">
+                <dt className="eyebrow text-accent">
                   Client
                 </dt>
                 <dd className="mt-2 font-semibold">{page.client}</dd>
               </div>
               <div>
-                <dt className="text-sm font-bold uppercase tracking-[0.2em] text-accent">
+                <dt className="eyebrow text-accent">
                   Project
                 </dt>
                 <dd className="mt-2 font-semibold">{page.projectType}</dd>
@@ -348,7 +348,7 @@ export const CaseStudyPage = ({ page }: CaseStudyPageProps): JSX.Element => {
         <section className="border-t border-border/50 bg-surface-blue">
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
             <figure className="border border-border/50 bg-surface p-8 shadow-[0_18px_40px_rgba(53,63,68,0.07)]">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+              <p className="eyebrow text-accent">
                 Client words
               </p>
               <blockquote className="mt-5 text-base leading-8 italic text-foreground/92">
@@ -387,10 +387,10 @@ export const InfoPage = ({ page }: InfoPageProps): JSX.Element => {
       <section className="border-b border-border/50 bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-18">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.26em] text-accent">
+            <p className="eyebrow text-accent">
               {page.eyebrow}
             </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 text-4xl leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
               {page.title}
             </h1>
             <p className="mt-6 text-lg leading-8 text-foreground/92">
@@ -420,7 +420,7 @@ export const InfoPage = ({ page }: InfoPageProps): JSX.Element => {
                   <p className="font-mono text-sm font-bold text-accent">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h2 className="mt-4 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
+                  <h2 className="mt-4 text-2xl leading-tight text-foreground sm:text-3xl">
                     {section.title}
                   </h2>
                   <p className="mt-4 text-sm leading-7 text-foreground/88">

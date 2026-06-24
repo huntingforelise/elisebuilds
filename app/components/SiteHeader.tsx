@@ -9,9 +9,9 @@ export const SiteHeader = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-surface/10 bg-black shadow-[0_12px_32px_rgba(5,5,7,0.18)]">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="w-40 shrink-0 md:w-48 lg:w-56">
+    <header className="sticky top-0 z-50 border-b border-surface/10 bg-accent-ink/95 shadow-[0_12px_32px_rgba(18,26,42,0.18)] backdrop-blur-md [font-family:'Helvetica_Neue',Arial,sans-serif]">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="w-36 shrink-0 md:w-44 lg:w-48">
           <Image
             src="/elisebuilds.png"
             alt="Elise Verhoeye logo"
@@ -31,7 +31,7 @@ export const SiteHeader = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-3 py-2 text-sm font-bold text-surface/86 transition hover:bg-accent/14 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black lg:px-4"
+                className="border border-transparent px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-surface/78 transition hover:border-surface/18 hover:bg-surface/8 hover:text-brand-sun focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-accent-ink lg:px-4"
               >
                 {link.label}
               </Link>
@@ -39,7 +39,7 @@ export const SiteHeader = () => {
           </nav>
           <Link
             href="/contact"
-            className="hidden rounded-full border-2 border-accent bg-accent px-4 py-2 text-sm font-bold text-surface shadow-[0_10px_24px_rgba(216,79,119,0.24)] transition hover:-translate-y-0.5 hover:border-surface hover:bg-surface hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black md:inline-flex"
+            className="hidden border border-brand-sun bg-brand-sun px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-foreground shadow-[0.25rem_0.25rem_0_rgba(232,95,141,0.95)] transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-accent-ink md:inline-flex"
           >
             Get in touch
           </Link>

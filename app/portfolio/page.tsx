@@ -71,14 +71,13 @@ const PortfolioPage = () => {
       />
 
       <section className="relative isolate overflow-hidden border-b border-border/50 bg-background">
-        <div className="pointer-events-none absolute right-[7%] top-14 z-0 hidden h-28 w-28 rounded-full border-[14px] border-accent/16 lg:block" />
-        <div className="pointer-events-none absolute right-[18%] bottom-12 z-0 hidden h-16 w-16 rotate-12 border border-brand-sun/38 lg:block" />
+        <div className="grid-overlay-light pointer-events-none absolute inset-0 opacity-70" />
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-18">
           <ScrollReveal className="max-w-5xl">
-            <p className="text-sm font-bold uppercase tracking-[0.26em] text-accent">
+            <p className="eyebrow text-accent">
               What I&apos;ve been up to
             </p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="poster-heading mt-4 max-w-4xl text-4xl leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
               Things I’ve built, shaped, and shipped.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/92">
@@ -107,14 +106,14 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      <section className="bg-surface">
+      <section className="bg-surface-blue">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-16 lg:px-8">
           <ScrollReveal>
             <div className="max-w-3xl pb-2">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+              <p className="eyebrow text-accent">
                 Case studies
               </p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+              <h2 className="mt-3 text-3xl leading-tight text-foreground sm:text-4xl">
                 A few projects in more detail.
               </h2>
               <p className="mt-4 text-base leading-8 text-foreground/82">
@@ -125,13 +124,13 @@ const PortfolioPage = () => {
           </ScrollReveal>
 
           <ScrollReveal>
-            <article className="border border-border/50 bg-foreground p-8 text-surface shadow-[0_18px_40px_rgba(5,5,7,0.12)]">
+            <article className="border border-surface/12 bg-accent-ink p-8 text-surface shadow-[0_18px_40px_rgba(18,26,42,0.12)]">
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                 <div>
                   <p className="font-mono text-sm font-bold text-accent">
                     01 / Current work
                   </p>
-                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-surface sm:text-3xl">
+                  <h2 className="poster-heading mt-3 text-2xl leading-tight text-surface sm:text-3xl">
                     Real estate mobile app
                   </h2>
                   <p className="mt-4 text-base leading-8 text-surface/82">
@@ -148,7 +147,7 @@ const PortfolioPage = () => {
                   </p>
                 </div>
                 <div className="mx-auto w-full max-w-[190px]">
-                  <div className="rounded-[1.85rem] bg-foreground p-2 shadow-[0_18px_38px_rgba(5,5,7,0.18)] ring-1 ring-foreground/10">
+                  <div className="rounded-[1.85rem] bg-accent-ink p-2 shadow-[0_18px_38px_rgba(18,26,42,0.18)] ring-1 ring-foreground/10">
                     <div className="mx-auto mb-1.5 h-1.5 w-11 rounded-full bg-surface/25" />
                     <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.3rem] bg-surface">
                       <Image
@@ -168,8 +167,8 @@ const PortfolioPage = () => {
           {caseStudies.map((caseStudy, index) => (
             <ScrollReveal key={caseStudy.slug} delay={index * 0.08} y={18}>
               <article
-                className={`border border-border/50 p-6 shadow-[0_18px_40px_rgba(5,5,7,0.07)] lg:p-8 ${
-                  index % 2 === 0 ? "bg-surface-strong" : "bg-background"
+                className={`border border-border/50 p-6 shadow-[0_18px_40px_rgba(18,26,42,0.07)] lg:p-8 ${
+                  index % 2 === 0 ? "bg-surface" : "bg-background"
                 }`}
               >
                 <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -177,7 +176,7 @@ const PortfolioPage = () => {
                     <p className="font-mono text-sm font-bold text-accent">
                       {String(index + 2).padStart(2, "0")} / {caseStudy.client}
                     </p>
-                    <h2 className="mt-4 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
+                    <h2 className="poster-heading mt-4 text-2xl leading-tight text-foreground sm:text-3xl">
                       {caseStudy.projectType}
                     </h2>
                     <p className="mt-4 text-base leading-8 text-foreground/90">
@@ -203,7 +202,7 @@ const PortfolioPage = () => {
                   </div>
 
                   <div
-                    className={`border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(5,5,7,0.08)] ${
+                    className={`border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(18,26,42,0.08)] ${
                       caseStudy.slug === "/work/orca"
                         ? "mx-auto w-full max-w-[260px]"
                         : ""
@@ -259,12 +258,12 @@ const PortfolioPage = () => {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
           <ScrollReveal>
-            <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(5,5,7,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(18,26,42,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+                <p className="eyebrow text-accent">
                   Next step
                 </p>
-                <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+                <h2 className="mt-3 text-3xl leading-tight text-foreground sm:text-4xl">
                   Have a similar project in mind?
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-8 text-foreground/82">

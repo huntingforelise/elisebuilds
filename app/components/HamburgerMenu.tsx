@@ -34,7 +34,7 @@ export const HamburgerMenu = () => {
         aria-expanded={isOpen}
         aria-controls={menuId}
         onClick={() => setIsOpen((current) => !current)}
-        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border-2 border-surface/20 bg-surface text-foreground transition hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        className="flex h-11 w-11 cursor-pointer items-center justify-center border border-surface/30 bg-surface text-foreground transition hover:border-brand-sun hover:bg-brand-sun focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
       >
         <span className="sr-only">
           {isOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -62,7 +62,7 @@ export const HamburgerMenu = () => {
         <nav
           id={menuId}
           aria-label="Site navigation"
-          className="absolute right-0 top-full z-50 mt-3 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-border/60 bg-surface shadow-[0_18px_45px_rgba(40,50,59,0.16)]"
+          className="absolute right-0 top-full z-50 mt-3 w-[min(18rem,calc(100vw-2rem))] overflow-hidden border border-border/60 bg-surface shadow-[0_18px_45px_rgba(40,50,59,0.16)]"
         >
           <div className="grid p-2">
             {navigationLinks.map((link) => (
@@ -70,7 +70,7 @@ export const HamburgerMenu = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-xl px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-blue hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="border border-transparent px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-foreground transition hover:border-border hover:bg-brand-sun focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 {link.label}
               </Link>
