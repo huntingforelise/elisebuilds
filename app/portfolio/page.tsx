@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CountUpNumber } from "../components/CountUpNumber";
 import { GoogleAppointmentButton } from "../components/GoogleAppointmentButton";
 import { PageShell, projectLinks } from "../components/SeoPageTemplates";
 import { ScrollReveal } from "../components/ScrollReveal";
@@ -31,6 +30,27 @@ const ProjectLinks = ({ slug }: { slug: string }) => {
     </div>
   );
 };
+
+const SHIPPED_BAND_ITEMS = [
+  {
+    value: "4",
+    label: "live websites",
+    detail: "Real domains, booking flows, and portfolio work out in the world",
+    tone: "bg-brand-sun text-black",
+  },
+  {
+    value: "1",
+    label: "App Store app",
+    detail: "Mobile product work shipped into an app people can download",
+    tone: "bg-accent text-surface",
+  },
+  {
+    value: "1",
+    label: "mobile app about to be released",
+    detail: "Release setup, deployment, and launch polish in motion",
+    tone: "bg-surface text-foreground",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -72,11 +92,9 @@ const PortfolioPage = () => {
 
       <section className="relative isolate overflow-hidden border-b border-border/50 bg-background">
         <div className="grid-overlay-light pointer-events-none absolute inset-0 opacity-70" />
-        <div className="relative z-10 mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-18">
+        <div className="relative z-10 mx-auto max-w-6xl px-6 pb-10 pt-14 lg:px-8 lg:pt-18">
           <ScrollReveal className="max-w-5xl">
-            <p className="eyebrow text-accent">
-              What I&apos;ve been up to
-            </p>
+            <p className="eyebrow text-accent">What I&apos;ve been up to</p>
             <h1 className="poster-heading mt-4 max-w-4xl text-4xl leading-[1.04] text-foreground sm:text-5xl lg:text-6xl">
               Things I’ve built, shaped, and shipped.
             </h1>
@@ -84,25 +102,35 @@ const PortfolioPage = () => {
               A closer look at the problems I solved, the decisions I made, and
               the results achieved.
             </p>
-
-            <div className="mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-border/50 pt-5 text-center text-sm font-bold uppercase tracking-[0.16em] text-foreground/68">
-              <span className="inline-flex items-center justify-center gap-2">
-                <CountUpNumber
-                  value={4}
-                  className="rounded-full bg-accent-soft px-2 py-0.5 font-mono text-base font-black text-accent shadow-[0_8px_18px_rgba(216,79,119,0.22)]"
-                />
-                <span>live websites</span>
-              </span>
-              <span className="inline-flex items-center justify-center gap-2">
-                <span className="font-mono text-accent">1</span>
-                <span>App Store app</span>
-              </span>
-              <span className="inline-flex items-center justify-center gap-2">
-                <span className="font-mono text-accent">1</span>
-                <span>mobile app about to be released</span>
-              </span>
-            </div>
           </ScrollReveal>
+        </div>
+
+        <div className="relative z-10 w-full overflow-hidden border-y border-border/50 bg-accent-ink py-4 shadow-[0_18px_42px_rgba(18,26,42,0.12)]">
+          <div className="shipping-reel gap-4 px-4">
+            {[...SHIPPED_BAND_ITEMS, ...SHIPPED_BAND_ITEMS].map(
+              (item, index) => (
+                <div
+                  key={`${item.label}-${index}`}
+                  className="shipping-tile grid min-h-[8.25rem] grid-cols-[4.75rem_1fr] items-stretch overflow-hidden border border-surface/14 bg-accent-ink/82 text-surface shadow-[0_18px_40px_rgba(0,0,0,0.16)]"
+                >
+                  <div
+                    className={`flex items-center justify-center font-mono text-5xl font-black leading-none ${item.tone}`}
+                  >
+                    {item.value}
+                  </div>
+                  <div className="grid content-center px-5 py-4">
+                    <p className="eyebrow text-brand-sun">Shipped proof</p>
+                    <p className="mt-2 text-xl font-black uppercase leading-6 text-surface">
+                      {item.label}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-surface/72">
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              ),
+            )}
+          </div>
         </div>
       </section>
 
@@ -110,9 +138,7 @@ const PortfolioPage = () => {
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-16 lg:px-8">
           <ScrollReveal>
             <div className="max-w-3xl pb-2">
-              <p className="eyebrow text-accent">
-                Case studies
-              </p>
+              <p className="eyebrow text-accent">Case studies</p>
               <h2 className="mt-3 text-3xl leading-tight text-foreground sm:text-4xl">
                 A few projects in more detail.
               </h2>
@@ -260,9 +286,7 @@ const PortfolioPage = () => {
           <ScrollReveal>
             <div className="grid gap-8 border border-border/50 bg-surface p-8 shadow-[0_20px_45px_rgba(18,26,42,0.08)] lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <p className="eyebrow text-accent">
-                  Next step
-                </p>
+                <p className="eyebrow text-accent">Next step</p>
                 <h2 className="mt-3 text-3xl leading-tight text-foreground sm:text-4xl">
                   Have a similar project in mind?
                 </h2>

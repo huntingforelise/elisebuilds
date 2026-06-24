@@ -130,11 +130,29 @@ p {
   animation-play-state: paused;
 }
 
+.shipping-reel {
+  display: flex;
+  width: max-content;
+  animation: shipping-reel 28s linear infinite;
+}
+
+.shipping-reel:hover {
+  animation-play-state: paused;
+}
+
+.shipping-tile {
+  inline-size: min(88vw, 28rem);
+}
+
 .work-reel-card {
   inline-size: min(74vw, 23rem);
 }
 
 @media (min-width: 1024px) {
+  .shipping-tile {
+    inline-size: 34rem;
+  }
+
   .work-reel-card {
     inline-size: 30rem;
   }
@@ -188,9 +206,20 @@ p {
   }
 }
 
+@keyframes shipping-reel {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .count-up-pop,
-  .work-reel {
+  .work-reel,
+  .shipping-reel {
     animation: none;
   }
 }
