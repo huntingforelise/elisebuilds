@@ -1,0 +1,22 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396">
+  
+  
+<defs>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M24 0H0V24" fill="none" stroke="#fffef9" stroke-opacity=".065" stroke-width="1"/>
+  </pattern>
+</defs>
+  <rect width="1584" height="396" fill="#121a2a" />
+  <rect width="1584" height="396" fill="url(#grid)" />
+  <path d="M-80 345H1680" stroke="#fffef9" stroke-opacity=".08" stroke-width="1" />
+  <path d="M-80 67H1680" stroke="#fffef9" stroke-opacity=".08" stroke-width="1" />
+  
+  <g>
+    <rect x="468.4" y="136.4" width="115.60000000000001" height="115.60000000000001" fill="#e85f8d" />
+    <rect x="441.2" y="109.2" width="115.60000000000001" height="115.60000000000001" fill="#ffd166" />
+  </g>
+  <text x="622" y="208" font-family="'Avenir Next', Avenir, 'Helvetica Neue', Aptos, Arial, sans-serif" font-size="112" font-weight="900" fill="#fffef9" letter-spacing="0">elisebuilds</text>
+  <text x="626" y="281" font-family="'Nunito Sans', Nunito, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="800" fill="#fffef9" opacity=".78" letter-spacing="9">WEBSITES . APPS . AUTOMATIONS</text>
+
+</svg>
