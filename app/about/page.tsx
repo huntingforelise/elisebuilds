@@ -58,7 +58,7 @@ const SNAPSHOTS = [
   {
     value: "4",
     label: "client nationalities",
-    detail: "Working across borders and contexts",
+    detail: "Australia, Germany, Spain, Norway",
     icon: "globe",
   },
 ] as const;
@@ -138,11 +138,7 @@ const STRUCTURED_DATA = {
 };
 
 const Eyebrow = ({ children }: { children: string }): JSX.Element => {
-  return (
-    <p className="eyebrow text-accent">
-      {children}
-    </p>
-  );
+  return <p className="eyebrow text-accent">{children}</p>;
 };
 
 type DetailIconName =
@@ -188,9 +184,7 @@ const WorkLinksSection = (): JSX.Element => {
     <section className="border-t border-border/50 bg-surface-strong">
       <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
         <ScrollReveal className="border border-border/50 bg-surface p-8 text-center shadow-[0_20px_50px_rgba(5,5,7,0.08)]">
-          <p className="eyebrow text-accent">
-            A small note
-          </p>
+          <p className="eyebrow text-accent">A small note</p>
           <h2 className="mt-4 text-3xl text-foreground">
             Despite my love for automation, I am not a robot.
           </h2>
@@ -295,10 +289,10 @@ const AboutPage = (): JSX.Element => {
               {SNAPSHOTS.map((item) => (
                 <div
                   key={item.label}
-                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(5,5,7,0.06)]"
+                  className="h-32 border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(5,5,7,0.06)]"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-accent-soft text-accent">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center text-accent">
                       <DetailIcon name={item.icon} />
                     </span>
                     <div>
@@ -319,10 +313,10 @@ const AboutPage = (): JSX.Element => {
               {PROFILE_DETAILS.map((item) => (
                 <div
                   key={item.title}
-                  className="border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(5,5,7,0.06)]"
+                  className="h-32 border border-border/50 bg-surface p-5 shadow-[0_14px_30px_rgba(5,5,7,0.06)]"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-surface-warm text-accent">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center text-accent">
                       <DetailIcon name={item.icon} />
                     </span>
                     <div>
