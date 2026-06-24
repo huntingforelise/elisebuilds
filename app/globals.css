@@ -18,7 +18,8 @@
   --font-ui-sans:
     "Nunito Sans", Nunito, ui-rounded, "SF Pro Rounded",
     "Arial Rounded MT Bold", system-ui, sans-serif;
-  --font-ui-display: "Helvetica Neue", "Aptos", Arial, sans-serif;
+  --font-ui-display:
+    "Avenir Next", "Avenir", "Helvetica Neue", "Aptos", Arial, sans-serif;
   --font-ui-body:
     "Nunito Sans", Nunito, ui-rounded, "SF Pro Rounded",
     "Arial Rounded MT Bold", system-ui, sans-serif;
@@ -99,8 +100,7 @@ p {
 }
 
 .poster-heading {
-  font-family:
-    "Avenir Next", "Avenir", "Helvetica Neue", "Aptos", Arial, sans-serif;
+  font-family: var(--font-ui-display);
   font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
