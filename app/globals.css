@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff9f5;
-  --foreground: #182033;
+  --background: #fff8e6;
+  --foreground: #121a2a;
   --surface: #fffef9;
-  --surface-strong: #fff4cf;
-  --surface-blue: #e6f5ff;
-  --surface-warm: #ffe8ee;
-  --border: rgb(24 32 51 / 0.14);
-  --muted: rgb(24 32 51 / 0.68);
+  --surface-strong: #ffe49a;
+  --surface-blue: #e9eef8;
+  --surface-warm: #ffe5ef;
+  --border: rgb(18 26 42 / 0.14);
+  --muted: rgb(18 26 42 / 0.68);
   --accent: #e85f8d;
   --accent-soft: #ffe0eb;
   --accent-ink: #121a2a;
@@ -59,8 +59,8 @@ body {
       rgb(232 95 141 / 0.1),
       transparent 26rem
     ),
-    linear-gradient(135deg, rgb(24 32 51 / 0.026) 0 1px, transparent 1px 22px),
-    linear-gradient(90deg, rgb(24 32 51 / 0.022) 1px, transparent 1px) 0 0 /
+    linear-gradient(135deg, rgb(18 26 42 / 0.026) 0 1px, transparent 1px 22px),
+    linear-gradient(90deg, rgb(18 26 42 / 0.022) 1px, transparent 1px) 0 0 /
       44px 44px,
     var(--background);
   color: var(--foreground);
@@ -159,8 +159,8 @@ p {
 
 .grid-overlay-light {
   background-image:
-    linear-gradient(rgb(24 32 51 / 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(24 32 51 / 0.045) 1px, transparent 1px);
+    linear-gradient(rgb(18 26 42 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(18 26 42 / 0.045) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

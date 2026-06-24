@@ -151,12 +151,12 @@ export const ServiceLandingPage = ({ page }: ServicePageProps): JSX.Element => {
             {page.outcomes.slice(0, 3).map((outcome, index) => (
               <div
                 key={outcome}
-                className="border-b border-border/50 px-5 py-5 sm:border-b-0 sm:border-r sm:last:border-r-0"
+                className="grid grid-cols-[2rem_1fr] gap-3 border-b border-border/50 px-5 py-5 sm:block sm:border-b-0 sm:border-r sm:last:border-r-0"
               >
-                <p className="font-mono text-sm font-bold text-accent">
+                <p className="font-mono text-sm font-bold leading-7 text-accent">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="mt-3 text-sm font-semibold leading-7 text-foreground/88">
+                <p className="text-sm font-semibold leading-7 text-foreground/88 sm:mt-3">
                   {outcome}
                 </p>
               </div>
@@ -185,12 +185,12 @@ export const ServiceLandingPage = ({ page }: ServicePageProps): JSX.Element => {
             {page.process.map((step, index) => (
               <div
                 key={step}
-                className="border border-border/50 bg-surface p-6"
+                className="grid grid-cols-[2rem_1fr] gap-3 border border-border/50 bg-surface p-6 md:block"
               >
-                <p className="font-mono text-sm font-bold text-accent">
+                <p className="font-mono text-sm font-bold leading-7 text-accent">
                   0{index + 1}
                 </p>
-                <p className="mt-4 text-sm leading-7 text-foreground/92">
+                <p className="text-sm leading-7 text-foreground/92 md:mt-4">
                   {step}
                 </p>
               </div>

@@ -345,19 +345,21 @@ const ServicesPreview = (): JSX.Element => {
           {SERVICES.map((item, index) => (
             <ScrollReveal
               key={item.title}
-              className="agency-card relative overflow-hidden p-5 transition hover:-translate-y-1 hover:border-foreground sm:p-6"
+              className="agency-card relative grid grid-cols-[2rem_1fr] gap-3 overflow-hidden p-5 transition hover:-translate-y-1 hover:border-foreground sm:p-6 md:block"
               delay={index * 0.08}
               y={22}
             >
-              <p className="relative mb-5 font-mono text-sm font-bold text-accent">
+              <p className="relative font-mono text-sm font-bold leading-7 text-accent md:mb-5">
                 0{index + 1}
               </p>
-              <h3 className="relative text-lg text-foreground sm:text-xl">
-                {item.title}
-              </h3>
-              <p className="relative mt-2 text-sm leading-7 text-foreground/92 sm:mt-3">
-                {item.text}
-              </p>
+              <div>
+                <h3 className="relative text-lg text-foreground sm:text-xl">
+                  {item.title}
+                </h3>
+                <p className="relative mt-2 text-sm leading-7 text-foreground/92 sm:mt-3">
+                  {item.text}
+                </p>
+              </div>
             </ScrollReveal>
           ))}
         </div>
@@ -392,7 +394,7 @@ const ProcessPreview = (): JSX.Element => {
         <div className="grid gap-3">
           {PROCESS_STEPS.map((step, index) => (
             <ScrollReveal key={step.title} delay={index * 0.06} y={16}>
-              <div className="grid gap-3 border border-border/60 bg-surface px-5 py-6 shadow-[0_14px_32px_rgba(36,27,58,0.07)] transition hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[0.45rem_0.45rem_0_var(--accent)] sm:grid-cols-[3rem_1fr] sm:gap-5">
+              <div className="grid grid-cols-[3rem_1fr] gap-5 border border-border/60 bg-surface px-5 py-6 shadow-[0_14px_32px_rgba(36,27,58,0.07)] transition hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[0.45rem_0.45rem_0_var(--accent)]">
                 <p className="flex h-10 w-10 items-center justify-center bg-accent-ink font-mono text-sm font-bold leading-7 text-surface">
                   {String(index + 1).padStart(2, "0")}
                 </p>

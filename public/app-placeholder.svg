@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" role="img" aria-labelledby="title desc">
   <title id="title">Orca app screenshot placeholder</title>
   <desc id="desc">A portrait mobile app screenshot placeholder to replace with the Orca app image.</desc>
-  <rect width="390" height="844" fill="#e1ecf6"/>
-  <rect x="24" y="32" width="342" height="780" rx="32" fill="#fffaf3"/>
-  <rect x="48" y="64" width="294" height="46" rx="23" fill="#28323b" opacity="0.92"/>
-  <circle cx="78" cy="87" r="11" fill="#d86f4b"/>
-  <rect x="104" y="78" width="112" height="18" rx="9" fill="#fffaf3" opacity="0.86"/>
-  <rect x="274" y="78" width="42" height="18" rx="9" fill="#fffaf3" opacity="0.44"/>
-  <rect x="48" y="132" width="294" height="316" rx="28" fill="#28323b"/>
-  <path d="M48 342 C102 300 140 334 188 292 C232 254 278 270 342 224 L342 448 L48 448 Z" fill="#d86f4b" opacity="0.9"/>
-  <path d="M48 272 C106 234 152 246 204 214 C254 184 290 192 342 158 L342 448 L48 448 Z" fill="#e1ecf6" opacity="0.82"/>
-  <circle cx="260" cy="244" r="42" fill="#fffaf3" opacity="0.9"/>
-  <rect x="48" y="476" width="294" height="94" rx="24" fill="#f4e2d5"/>
-  <rect x="76" y="506" width="132" height="16" rx="8" fill="#28323b" opacity="0.74"/>
-  <rect x="76" y="536" width="206" height="14" rx="7" fill="#28323b" opacity="0.34"/>
-  <rect x="48" y="594" width="138" height="148" rx="24" fill="#e1ecf6"/>
-  <rect x="204" y="594" width="138" height="148" rx="24" fill="#f4e2d5"/>
-  <rect x="76" y="630" width="70" height="16" rx="8" fill="#28323b" opacity="0.62"/>
-  <rect x="232" y="630" width="70" height="16" rx="8" fill="#28323b" opacity="0.62"/>
-  <rect x="76" y="668" width="82" height="42" rx="21" fill="#d86f4b"/>
-  <rect x="232" y="668" width="82" height="42" rx="21" fill="#28323b" opacity="0.84"/>
-  <rect x="114" y="766" width="162" height="10" rx="5" fill="#28323b" opacity="0.2"/>
+  <rect width="390" height="844" fill="#e9eef8"/>
+  <rect x="24" y="32" width="342" height="780" rx="32" fill="#fffef9"/>
+  <rect x="48" y="64" width="294" height="46" rx="23" fill="#121a2a" opacity="0.92"/>
+  <circle cx="78" cy="87" r="11" fill="#e85f8d"/>
+  <rect x="104" y="78" width="112" height="18" rx="9" fill="#fffef9" opacity="0.86"/>
+  <rect x="274" y="78" width="42" height="18" rx="9" fill="#fffef9" opacity="0.44"/>
+  <rect x="48" y="132" width="294" height="316" rx="28" fill="#121a2a"/>
+  <path d="M48 342 C102 300 140 334 188 292 C232 254 278 270 342 224 L342 448 L48 448 Z" fill="#e85f8d" opacity="0.9"/>
+  <path d="M48 272 C106 234 152 246 204 214 C254 184 290 192 342 158 L342 448 L48 448 Z" fill="#ffe49a" opacity="0.82"/>
+  <circle cx="260" cy="244" r="42" fill="#fffef9" opacity="0.9"/>
+  <rect x="48" y="476" width="294" height="94" rx="24" fill="#ffe49a"/>
+  <rect x="76" y="506" width="132" height="16" rx="8" fill="#121a2a" opacity="0.74"/>
+  <rect x="76" y="536" width="206" height="14" rx="7" fill="#121a2a" opacity="0.34"/>
+  <rect x="48" y="594" width="138" height="148" rx="24" fill="#e9eef8"/>
+  <rect x="204" y="594" width="138" height="148" rx="24" fill="#ffe5ef"/>
+  <rect x="76" y="630" width="70" height="16" rx="8" fill="#121a2a" opacity="0.62"/>
+  <rect x="232" y="630" width="70" height="16" rx="8" fill="#121a2a" opacity="0.62"/>
+  <rect x="76" y="668" width="82" height="42" rx="21" fill="#e85f8d"/>
+  <rect x="232" y="668" width="82" height="42" rx="21" fill="#121a2a" opacity="0.84"/>
+  <rect x="114" y="766" width="162" height="10" rx="5" fill="#121a2a" opacity="0.2"/>
 </svg>

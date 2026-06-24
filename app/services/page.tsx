@@ -67,7 +67,7 @@ const TECH_GROUPS = [
   },
   {
     title: "Backend & data",
-    items: ["Supabase", "Firebase", "Sanity", "Contentful"],
+    items: ["Supabase", "Firebase", "Stripe", "Sanity", "Contentful"],
   },
   {
     title: "Auth & delivery",
@@ -167,7 +167,7 @@ const ServicesPage = () => {
           <div className="grid gap-3">
             {SERVICE_AREAS.map((service, index) => (
               <ScrollReveal key={service.title} delay={index * 0.04} y={12}>
-                <div className="grid gap-3 border border-surface/14 bg-surface/8 px-4 py-5 sm:grid-cols-[2rem_1fr] sm:gap-4">
+                <div className="grid grid-cols-[2rem_1fr] gap-4 border border-surface/14 bg-surface/8 px-4 py-5">
                   <span className="font-mono text-sm font-bold leading-7 text-accent">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -207,7 +207,7 @@ const ServicesPage = () => {
               {HOW_IT_WORKS.map((step, index) => (
                 <div
                   key={step.title}
-                  className="grid gap-3 border-l-4 border-accent bg-surface px-5 py-4 shadow-[0_14px_30px_rgba(18,26,42,0.06)] sm:grid-cols-[2rem_1fr] sm:gap-4"
+                  className="grid grid-cols-[2rem_1fr] gap-4 border-l-4 border-accent bg-surface px-5 py-4 shadow-[0_14px_30px_rgba(18,26,42,0.06)]"
                 >
                   <p className="font-mono text-sm font-bold leading-7 text-accent">
                     0{index + 1}
