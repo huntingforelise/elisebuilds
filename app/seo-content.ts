@@ -31,7 +31,8 @@ export type CaseStudyContent = {
   summary: string;
   focus: string[];
   results: string[];
-  testimonial: {
+  projectNote?: string;
+  testimonial?: {
     quote: string;
     name: string;
     role: string;
@@ -209,7 +210,7 @@ export const caseStudies: CaseStudyContent[] = [
     description:
       "A custom website and structured booking system for Casa Film & Music, designed to clarify services and reduce manual enquiry work.",
     client: "Casa Film & Music",
-    projectType: "Website and booking system",
+    projectType: "Creative studio website and booking system",
     image: {
       src: "/casa-film-website-screenshot.png",
       alt: "Casa Film and Music website screenshot",
@@ -268,6 +269,36 @@ export const caseStudies: CaseStudyContent[] = [
       name: "Judith Sirera i Pulido",
       role: "Senior Engineer",
     },
+  },
+  {
+    slug: "/work/casa-la-sorpresa",
+    title: "Casa la Sorpresa Holiday Rental Website",
+    eyebrow: "Portfolio example",
+    description:
+      "A multilingual holiday rental website and direct booking flow for Casa la Sorpresa, built to present the property clearly and increase direct booking revenue.",
+    client: "Casa la Sorpresa",
+    projectType: "Holiday rental website and direct booking flow",
+    image: {
+      src: "/casa-la-sorpresa-website-screenshot.png",
+      alt: "Casa la Sorpresa website screenshot",
+    },
+    summary:
+      "Casa la Sorpresa needed a clearer direct-booking presence for their Andalusian holiday rental. The work focused on presenting the property, reducing dependence on third-party booking platforms, and creating a guest journey that can turn more interested visitors into direct bookings over time.",
+    focus: [
+      "Present the property, location, and guest information clearly",
+      "Support multilingual visitors with localized page structure",
+      "Make direct booking next steps easier to understand",
+      "Reduce reliance on third-party booking platforms",
+      "Create a stronger owned channel for direct booking revenue",
+    ],
+    results: [
+      "A live website for Casa la Sorpresa",
+      "Clearer property pages for guests comparing stays",
+      "A booking-oriented structure designed to increase direct bookings",
+      "A maintainable Next.js base for future rental operations",
+    ],
+    projectNote:
+      "The Casa la Sorpresa domain will be connected later this year.",
   },
 ];
 

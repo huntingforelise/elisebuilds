@@ -8,14 +8,14 @@ import { caseStudies, SITE_URL } from "../seo-content";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Portfolio work by Elise Verhoeye, including Casa Film & Music, Orca, and current mobile app work.",
+    "Portfolio work by Elise Verhoeye, including Casa Film & Music, Casa la Sorpresa, Orca, and current mobile app work.",
   alternates: {
     canonical: "/work",
   },
   openGraph: {
     title: "Work | elisebuilds",
     description:
-      "Portfolio work by Elise Verhoeye, including Casa Film & Music, Orca, and current mobile app work.",
+      "Portfolio work by Elise Verhoeye, including Casa Film & Music, Casa la Sorpresa, Orca, and current mobile app work.",
     url: `${SITE_URL}/work`,
     images: [
       {
@@ -95,7 +95,7 @@ const WorkPage = () => {
                   <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
                     Current work
                   </p>
-                  <h2 className="mt-3 text-2xl font-semibold text-surface">
+                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-surface sm:text-3xl">
                     Real estate mobile app
                   </h2>
                   <p className="mt-4 text-base leading-8 text-surface/82">
@@ -152,34 +152,61 @@ const WorkPage = () => {
                         </li>
                       ))}
                     </ul>
+                    {caseStudy.projectNote ? (
+                      <p className="mt-5 border-l-4 border-accent bg-surface-blue px-4 py-3 text-sm font-semibold leading-7 text-foreground/88">
+                        {caseStudy.projectNote}
+                      </p>
+                    ) : null}
                   </div>
 
                   <div>
-                    <div className="rotate-[1deg] border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(53,63,68,0.08)]">
-                      <div className="relative aspect-[16/10] overflow-hidden bg-surface-blue">
+                    <div
+                      className={`rotate-[1deg] border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(53,63,68,0.08)] ${
+                        caseStudy.slug === "/work/orca"
+                          ? "mx-auto w-full max-w-[260px]"
+                          : ""
+                      }`}
+                    >
+                      <div
+                        className={`relative overflow-hidden bg-surface-blue ${
+                          caseStudy.slug === "/work/orca"
+                            ? "aspect-[853/1844]"
+                            : "aspect-[16/10]"
+                        }`}
+                      >
                         <Image
                           src={caseStudy.image.src}
                           alt={caseStudy.image.alt}
                           fill
-                          sizes="(min-width: 1024px) 520px, calc(100vw - 64px)"
-                          className="object-cover"
+                          sizes={
+                            caseStudy.slug === "/work/orca"
+                              ? "260px"
+                              : "(min-width: 1024px) 520px, calc(100vw - 64px)"
+                          }
+                          className={
+                            caseStudy.slug === "/work/orca"
+                              ? "object-contain"
+                              : "object-cover"
+                          }
                           unoptimized
                         />
                       </div>
                     </div>
-                    <figure className="mt-5 border-l-4 border-accent bg-surface-warm p-5">
-                      <blockquote className="text-sm leading-7 italic text-foreground/92">
-                        {caseStudy.testimonial.quote}
-                      </blockquote>
-                      <figcaption className="mt-4 border-t border-border/50 pt-4">
-                        <p className="font-semibold">
-                          {caseStudy.testimonial.name}
-                        </p>
-                        <p className="mt-1 text-sm text-foreground/72">
-                          {caseStudy.testimonial.role}
-                        </p>
-                      </figcaption>
-                    </figure>
+                    {caseStudy.testimonial ? (
+                      <figure className="mt-5 border-l-4 border-accent bg-surface-warm p-5">
+                        <blockquote className="text-sm leading-7 italic text-foreground/92">
+                          {caseStudy.testimonial.quote}
+                        </blockquote>
+                        <figcaption className="mt-4 border-t border-border/50 pt-4">
+                          <p className="font-semibold">
+                            {caseStudy.testimonial.name}
+                          </p>
+                          <p className="mt-1 text-sm text-foreground/72">
+                            {caseStudy.testimonial.role}
+                          </p>
+                        </figcaption>
+                      </figure>
+                    ) : null}
                   </div>
                 </div>
               </article>

@@ -132,7 +132,7 @@ const TESTIMONIAL_PREVIEWS = [
 ].map((preview) => {
   const caseStudy = caseStudies.find((item) => item.client === preview.client);
 
-  if (!caseStudy) {
+  if (!caseStudy?.testimonial) {
     throw new Error(`Missing testimonial preview for ${preview.client}`);
   }
 

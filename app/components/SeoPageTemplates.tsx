@@ -51,6 +51,12 @@ export const projectLinks: Record<
       label: "Download the Orca app",
     },
   ],
+  "/work/casa-la-sorpresa": [
+    {
+      href: "https://casa-la-sorpresa.vercel.app/",
+      label: "Visit the Casa la Sorpresa website",
+    },
+  ],
 };
 
 export const PageShell = ({ children }: ShellProps): JSX.Element => {
@@ -231,13 +237,16 @@ export const ServiceLandingPage = ({ page }: ServicePageProps): JSX.Element => {
 
 export const CaseStudyPage = ({ page }: CaseStudyPageProps): JSX.Element => {
   const links = projectLinks[page.slug] ?? [];
+  const imageUrl = page.image.src.startsWith("http")
+    ? page.image.src
+    : `${SITE_URL}${page.image.src}`;
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: page.title,
     description: page.description,
     url: `${SITE_URL}${page.slug}`,
-    image: `${SITE_URL}${page.image.src}`,
+    image: imageUrl,
     author: {
       "@type": "Person",
       name: "Elise Verhoeye",
@@ -306,7 +315,10 @@ export const CaseStudyPage = ({ page }: CaseStudyPageProps): JSX.Element => {
                   sizes="(min-width: 1024px) 520px, calc(100vw - 64px)"
                   className="object-cover"
                   preload
-                  unoptimized={page.image.src.endsWith(".png")}
+                  unoptimized={
+                    page.image.src.startsWith("http") ||
+                    page.image.src.endsWith(".png")
+                  }
                 />
               </div>
             </div>
@@ -323,28 +335,35 @@ export const CaseStudyPage = ({ page }: CaseStudyPageProps): JSX.Element => {
           <div className="border-l-4 border-accent bg-surface-strong p-8 shadow-[0_18px_40px_rgba(53,63,68,0.07)]">
             <SectionHeading eyebrow="Results" title="What changed" />
             <BulletList items={page.results} />
+            {page.projectNote ? (
+              <p className="mt-6 border-l-4 border-accent bg-surface px-4 py-3 text-sm font-semibold leading-7 text-foreground/88">
+                {page.projectNote}
+              </p>
+            ) : null}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-border/50 bg-surface-blue">
-        <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
-          <figure className="border border-border/50 bg-surface p-8 shadow-[0_18px_40px_rgba(53,63,68,0.07)]">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
-              Client words
-            </p>
-            <blockquote className="mt-5 text-base leading-8 italic text-foreground/92">
-              {page.testimonial.quote}
-            </blockquote>
-            <figcaption className="mt-6 border-t border-border/50 pt-5">
-              <p className="font-semibold">{page.testimonial.name}</p>
-              <p className="mt-1 text-sm text-foreground/72">
-                {page.testimonial.role}
+      {page.testimonial ? (
+        <section className="border-t border-border/50 bg-surface-blue">
+          <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
+            <figure className="border border-border/50 bg-surface p-8 shadow-[0_18px_40px_rgba(53,63,68,0.07)]">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">
+                Client words
               </p>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
+              <blockquote className="mt-5 text-base leading-8 italic text-foreground/92">
+                {page.testimonial.quote}
+              </blockquote>
+              <figcaption className="mt-6 border-t border-border/50 pt-5">
+                <p className="font-semibold">{page.testimonial.name}</p>
+                <p className="mt-1 text-sm text-foreground/72">
+                  {page.testimonial.role}
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      ) : null}
     </PageShell>
   );
 };

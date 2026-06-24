@@ -35,14 +35,14 @@ const ProjectLinks = ({ slug }: { slug: string }) => {
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Portfolio work by Elise Verhoeye, including Casa Film & Music, Orca, and current mobile app work.",
+    "Portfolio work by Elise Verhoeye, including Casa Film & Music, Casa la Sorpresa, Orca, and current mobile app work.",
   alternates: {
     canonical: "/portfolio",
   },
   openGraph: {
     title: "Portfolio | elisebuilds",
     description:
-      "Portfolio work by Elise Verhoeye, including Casa Film & Music, Orca, and current mobile app work.",
+      "Portfolio work by Elise Verhoeye, including Casa Film & Music, Casa la Sorpresa, Orca, and current mobile app work.",
     url: `${SITE_URL}/portfolio`,
     images: [
       {
@@ -89,7 +89,7 @@ const PortfolioPage = () => {
             <div className="mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-border/50 pt-5 text-center text-sm font-bold uppercase tracking-[0.16em] text-foreground/68">
               <span className="inline-flex items-center justify-center gap-2">
                 <CountUpNumber
-                  value={3}
+                  value={4}
                   className="rounded-full bg-accent-soft px-2 py-0.5 font-mono text-base font-black text-accent shadow-[0_8px_18px_rgba(216,79,119,0.22)]"
                 />
                 <span>live websites</span>
@@ -131,7 +131,7 @@ const PortfolioPage = () => {
                   <p className="font-mono text-sm font-bold text-accent">
                     01 / Current work
                   </p>
-                  <h2 className="mt-3 text-2xl font-semibold text-surface">
+                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-surface sm:text-3xl">
                     Real estate mobile app
                   </h2>
                   <p className="mt-4 text-base leading-8 text-surface/82">
@@ -195,34 +195,61 @@ const PortfolioPage = () => {
                       ))}
                     </ul>
                     <ProjectLinks slug={caseStudy.slug} />
+                    {caseStudy.projectNote ? (
+                      <p className="mt-5 border-l-4 border-accent bg-surface-blue px-4 py-3 text-sm font-semibold leading-7 text-foreground/88">
+                        {caseStudy.projectNote}
+                      </p>
+                    ) : null}
                   </div>
 
-                  <div className="border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(5,5,7,0.08)]">
-                    <div className="relative aspect-[16/10] overflow-hidden bg-surface-blue">
+                  <div
+                    className={`border border-border/50 bg-surface p-4 shadow-[0_14px_32px_rgba(5,5,7,0.08)] ${
+                      caseStudy.slug === "/work/orca"
+                        ? "mx-auto w-full max-w-[260px]"
+                        : ""
+                    }`}
+                  >
+                    <div
+                      className={`relative overflow-hidden bg-surface-blue ${
+                        caseStudy.slug === "/work/orca"
+                          ? "aspect-[853/1844]"
+                          : "aspect-[16/10]"
+                      }`}
+                    >
                       <Image
                         src={caseStudy.image.src}
                         alt={caseStudy.image.alt}
                         fill
-                        sizes="(min-width: 1024px) 520px, calc(100vw - 64px)"
-                        className="object-cover"
+                        sizes={
+                          caseStudy.slug === "/work/orca"
+                            ? "260px"
+                            : "(min-width: 1024px) 520px, calc(100vw - 64px)"
+                        }
+                        className={
+                          caseStudy.slug === "/work/orca"
+                            ? "object-contain"
+                            : "object-cover"
+                        }
                         unoptimized
                       />
                     </div>
                   </div>
                 </div>
-                <figure className="mt-8 border-l-4 border-accent bg-surface-blue p-5 lg:p-6">
-                  <blockquote className="text-sm leading-7 italic text-foreground/92">
-                    {caseStudy.testimonial.quote}
-                  </blockquote>
-                  <figcaption className="mt-4 border-t border-border/50 pt-4">
-                    <p className="font-semibold">
-                      {caseStudy.testimonial.name}
-                    </p>
-                    <p className="mt-1 text-sm text-foreground/72">
-                      {caseStudy.testimonial.role}
-                    </p>
-                  </figcaption>
-                </figure>
+                {caseStudy.testimonial ? (
+                  <figure className="mt-8 border-l-4 border-accent bg-surface-blue p-5 lg:p-6">
+                    <blockquote className="text-sm leading-7 italic text-foreground/92">
+                      {caseStudy.testimonial.quote}
+                    </blockquote>
+                    <figcaption className="mt-4 border-t border-border/50 pt-4">
+                      <p className="font-semibold">
+                        {caseStudy.testimonial.name}
+                      </p>
+                      <p className="mt-1 text-sm text-foreground/72">
+                        {caseStudy.testimonial.role}
+                      </p>
+                    </figcaption>
+                  </figure>
+                ) : null}
               </article>
             </ScrollReveal>
           ))}
