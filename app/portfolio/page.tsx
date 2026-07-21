@@ -164,7 +164,7 @@ const PortfolioPage = () => {
                     into a more private mobile app experience for buyers and
                     sellers, with a focus on trust, product flow, and timely
                     updates. The finished app is planned for release on the App
-                    Store and Google Play in June 2026.
+                    Store and Google Play in August 2026.
                   </p>
                   <p className="mt-5 border-l-4 border-accent bg-surface/10 px-4 py-3 text-sm font-semibold leading-7 text-surface/88">
                     I’m building the app end to end myself, from product flow
